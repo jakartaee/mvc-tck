@@ -2,6 +2,7 @@
 <!--
 
     Copyright © 2017 Ivar Grimstad (ivar.grimstad@gmail.com)
+    Copyright (c) 2020 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -22,10 +23,10 @@
 
     <groupId>org.mvc-spec.tck</groupId>
     <artifactId>mvc-tck-sample</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
 
-    <name>JSR 371 TCK - Sample Runner</name>
-    <description>Technology Compatibility Kit for JSR 371</description>
+    <name>Jakarta MVC TCK - Sample Runner</name>
+    <description>Technology Compatibility Kit for Jakarta MVC</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -53,8 +54,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>8.0.o</version>
             <scope>provided</scope>
         </dependency>
 

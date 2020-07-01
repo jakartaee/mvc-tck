@@ -2,6 +2,7 @@
 <!--
 
     Copyright © 2019 Christian Kaltepoth
+    Copyright (c) 2020 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -23,13 +24,13 @@
     <parent>
         <groupId>org.mvc-spec.tck</groupId>
         <artifactId>mvc-tck-parent</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>mvc-tck-sigtest</artifactId>
-    <name>JSR 371 TCK - Signature Test</name>
+    <name>Jakarta MVC TCK - Signature Test</name>
     <packaging>pom</packaging>
-    <description>Technology Compatibility Kit for JSR 371</description>
+    <description>Technology Compatibility Kit for Jakarta MVC</description>
 
     <build>
         <plugins>
@@ -49,8 +50,8 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>javax.mvc</groupId>
-                                    <artifactId>javax.mvc-api</artifactId>
+                                    <groupId>jakarta.mvc</groupId>
+                                    <artifactId>jakarta.mvc-api</artifactId>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${project.build.directory}/mvc-api</outputDirectory>
@@ -108,9 +109,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>8.0</version>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>8.0.0</version>
             <scope>provided</scope>
         </dependency>
 
