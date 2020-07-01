@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!--
+
+    Copyright © 2017 Christian Kaltepoth
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Public License v. 2.0, which is available at
+    http://www.eclipse.org/legal/epl-2.0.
+
+    This Source Code may also be made available under the following Secondary
+    Licenses when the conditions for such availability set forth in the
+    Eclipse Public License v. 2.0 are satisfied: GNU General Public License,
+    version 2 with the GNU Classpath Exception, which is available at
+    https://www.gnu.org/software/classpath/license.html.
+
+    SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.mvc-spec.tck</groupId>
+        <artifactId>mvc-tck-parent</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>mvc-tck-tests</artifactId>
+    <name>JSR 371 TCK - Tests</name>
+    <description>Technology Compatibility Kit for JSR 371</description>
+
+    <properties>
+        <test.audit.version>1.1.4.Final</test.audit.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.mvc-spec.tck</groupId>
+            <artifactId>mvc-tck-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mvc</groupId>
+            <artifactId>javax.mvc-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <artifactId>shrinkwrap-descriptors-depchain</artifactId>
+            <type>pom</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.test-audit</groupId>
+            <artifactId>jboss-test-audit-api</artifactId>
+            <version>${test.audit.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mvc-spec.tck</groupId>
+                <artifactId>mvc-tck-bom</artifactId>
+                <version>${project.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <profiles>
+
+        <!-- Create the TCK audit report -->
+        <profile>
+            <id>coverage-report</id>
+            <activation>
+                <property>
+                    <name>coverage-report</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+
+                    <!-- Fetch the tck-audit.xml from the Maven repo -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-audit-xml</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>javax.mvc</groupId>
+                                    <artifactId>javax.mvc-api</artifactId>
+                                    <type>xml</type>
+                                    <classifier>audit</classifier>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/tck-audit/</outputDirectory>
+                                    <destFileName>tck-audit.xml</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </plugin>
+
+                    <!-- Generate the report -->
+                    <plugin>
+                        <groupId>org.bsc.maven</groupId>
+                        <artifactId>maven-processor-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>generate-audit-report</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>process</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <addCompileSourceRoots>true</addCompileSourceRoots>
+                            <processors>
+                                <processor>org.jboss.test.audit.report.CoverageProcessor</processor>
+                            </processors>
+                            <compilerArguments>
+                                -AauditXml=${project.build.directory}/tck-audit/tck-audit.xml
+                                -AoutputDir=${project.build.directory}/coverage-report/
+                                -source ${maven.compiler.source}
+                                -target ${maven.compiler.target}
+                            </compilerArguments>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.jboss.test-audit</groupId>
+                                <artifactId>jboss-test-audit-impl</artifactId>
+                                <version>${test.audit.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
