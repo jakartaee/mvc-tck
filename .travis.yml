@@ -1,7 +1,7 @@
 language: java
 jdk: openjdk8
 script:
-  - mvn -B -s .travis/deploy-settings.xml -Dcoverage-report clean install
+  - mvn -B -s .travis/deploy-settings.xml -Dcoverage-report clean install -Psnapshots
 deploy:
   - provider: script
     script: mvn -B -s .travis/deploy-settings.xml -DperformRelease -DskipTests -Dgpg.skip=true deploy
