@@ -7,13 +7,13 @@ deploy:
     script: mvn -B -s .travis/deploy-settings.xml -DperformRelease -DskipTests -Dgpg.skip=true deploy
     skip_cleanup: true
     on:
-      repo: mvc-spec/mvc-tck
+      repo: eclipse-ee4j/mvc-tck
       branch: master
   - provider: script
     script: .travis/deploy-coverage-report.sh
     skip_cleanup: true
     on:
-      repo: mvc-spec/mvc-tck
+      repo: eclipse-ee4j/mvc-tck
       branch: master
 env:
   global:
