@@ -2,6 +2,7 @@
 <!--
 
     Copyright © 2017, 2019 Christian Kaltepoth
+    Copyright (c) 2020 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -22,18 +23,25 @@
 
     <groupId>org.mvc-spec.tck</groupId>
     <artifactId>mvc-tck-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>JSR 371 TCK - Parent</name>
-    <description>Technology Compatibility Kit for JSR 371</description>
+    <name>Jakarta MVC TCK - Parent</name>
+    <description>Technology Compatibility Kit for Jakarta MVC</description>
     <url>https://www.mvc-spec.org/</url>
 
+    <parent>
+        <groupId>org.eclipse.ee4j</groupId>
+        <artifactId>project</artifactId>
+        <version>1.0.6</version>
+        <relativePath/>
+    </parent>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mvc-api.version>1.0.0</mvc-api.version>
+        <mvc-api.version>1.1-SNAPSHOT</mvc-api.version>
     </properties>
 
     <licenses>
@@ -47,12 +55,17 @@
             <url>https://www.gnu.org/software/classpath/license.html</url>
             <distribution>repo</distribution>
         </license>
+        <license>
+            <name>EFTL-1.0</name>
+            <url>https://www.eclipse.org/legal/tck.php</url>
+            <distribution>repo</distribution>
+        </license>
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:mvc-spec/mvc-tck.git</connection>
-        <developerConnection>scm:git:git@github.com:mvc-spec/mvc-tck.git</developerConnection>
-        <url>https://github.com/mvc-spec/mvc-tck</url>
+        <connection>scm:git:https://github.com/eclipse-ee4j/mvc-tck.git</connection>
+        <developerConnection>scm:git:https://github.com/eclipse-ee4j/mvc-tck.git</developerConnection>
+        <url>https://github.com/eclipse-ee4j/mvc-tck</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -69,7 +82,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/mvc-spec/mvc-tck/issues</url>
+        <url>https://github.com/eclipse-ee4j/mvc-tck/issues</url>
     </issueManagement>
 
     <modules>
