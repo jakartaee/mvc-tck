@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mvc-api.version>1.1-SNAPSHOT</mvc-api.version>
+        <mvc-api.version>1.1-RC1</mvc-api.version>
     </properties>
 
     <licenses>
