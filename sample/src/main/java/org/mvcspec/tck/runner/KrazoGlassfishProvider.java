@@ -27,14 +27,15 @@ public class KrazoGlassfishProvider implements BaseArchiveProvider {
     @Override
     public WebArchive getBaseArchive() {
 
-        File[] dependencies = Maven.resolver()
-                .resolve(
-                        "javax.mvc:javax.mvc-api:1.0.0",
-                        "org.eclipse.krazo:krazo-core:1.0.0",
-                        "org.eclipse.krazo:krazo-jersey:1.0.0"
-                )
-                .withoutTransitivity()
-                .asFile();
+        File[] dependencies = //Maven.resolver()
+                Maven.configureResolver().withMavenCentralRepo(false)
+                        .resolve(
+                                "jakarta.mvc:jakarta.mvc-api:1.1.0",
+                                "org.eclipse.krazo:krazo-core:1.1.0",
+                                "org.eclipse.krazo:krazo-jersey:1.1.0"
+                        )
+                        .withoutTransitivity()
+                        .asFile();
 
         return ShrinkWrap.create(WebArchive.class)
                 .addAsLibraries(dependencies);
