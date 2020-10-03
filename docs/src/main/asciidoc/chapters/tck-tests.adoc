@@ -162,7 +162,7 @@ The relevant section in the template project looks like this:
     <artifactId>maven-surefire-plugin</artifactId>
     <version>2.19.1</version>
     <configuration>
-        <dependenciesToScan>org.mvc-spec.tck:mvc-tck-tests</dependenciesToScan>
+        <dependenciesToScan>jakarta.mvc.tck:mvc-tck-tests</dependenciesToScan>
         <systemProperties>
             <org.mvcspec.tck.api.BaseArchiveProvider>
                 org.mvcspec.tck.runner.KrazoGlassfishProvider
