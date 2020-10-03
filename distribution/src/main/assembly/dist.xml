@@ -28,14 +28,14 @@
             <outputDirectory>artifacts</outputDirectory>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <includes>
-                <include>org.mvc-spec.tck:mvc-tck-tests</include>
+                <include>jakarta.mvc.tck:mvc-tck-tests</include>
             </includes>
         </dependencySet>
         <dependencySet>
             <outputDirectory>lib</outputDirectory>
             <useTransitiveDependencies>true</useTransitiveDependencies>
             <excludes>
-                <exclude>org.mvc-spec.tck:mvc-tck-tests</exclude>
+                <exclude>jakarta.mvc.tck:mvc-tck-tests</exclude>
             </excludes>
         </dependencySet>
         <dependencySet>
