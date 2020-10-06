@@ -79,12 +79,12 @@
                     <classes>${project.build.directory}/mvc-api</classes>
                     <attach>true</attach>
                     <packages>
-                        javax.mvc,
-                        javax.mvc.binding,
-                        javax.mvc.engine,
-                        javax.mvc.event,
-                        javax.mvc.locale,
-                        javax.mvc.security
+                        jakarta.mvc,
+                        jakarta.mvc.binding,
+                        jakarta.mvc.engine,
+                        jakarta.mvc.event,
+                        jakarta.mvc.locale,
+                        jakarta.mvc.security
                     </packages>
                 </configuration>
             </plugin>
@@ -111,7 +111,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <version>8.0.0</version>
+            <version>9.0.0-RC2</version>
             <scope>provided</scope>
         </dependency>
 

@@ -15,9 +15,9 @@
  */
 package org.mvcspec.tck.tests.i18n.access;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.mvc.locale.LocaleResolver;
-import javax.mvc.locale.LocaleResolverContext;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.mvc.locale.LocaleResolver;
+import jakarta.mvc.locale.LocaleResolverContext;
 import java.util.Locale;
 
 @ApplicationScoped

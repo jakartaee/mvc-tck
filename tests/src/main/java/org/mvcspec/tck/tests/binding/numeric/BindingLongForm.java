@@ -15,8 +15,8 @@
  */
 package org.mvcspec.tck.tests.binding.numeric;
 
-import javax.mvc.binding.MvcBinding;
-import javax.ws.rs.FormParam;
+import jakarta.mvc.binding.MvcBinding;
+import jakarta.ws.rs.FormParam;
 
 public class BindingLongForm {
 

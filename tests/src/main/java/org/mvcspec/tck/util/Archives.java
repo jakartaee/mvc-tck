@@ -19,7 +19,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.mvcspec.tck.api.BaseArchiveProvider;
 import org.mvcspec.tck.common.DefaultApplication;
 
-import javax.ws.rs.core.Application;
+import jakarta.ws.rs.core.Application;
 
 public class Archives {
 

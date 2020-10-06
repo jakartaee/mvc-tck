@@ -15,8 +15,8 @@
  */
 package org.mvcspec.tck.tests.application.app;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
 
 @ApplicationPath("annotation-app-path")
 public class MvcAppAnnotationApplication extends Application {

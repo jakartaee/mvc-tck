@@ -15,7 +15,7 @@
  */
 package org.mvcspec.tck.tests.mvc.instances.proxy;
 
-import javax.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
 
 @RequestScoped
 public class RequestScopedBean {

@@ -15,9 +15,9 @@
  */
 package org.mvcspec.tck.tests.binding.base;
 
-import javax.mvc.binding.MvcBinding;
-import javax.validation.constraints.Min;
-import javax.ws.rs.FormParam;
+import jakarta.mvc.binding.MvcBinding;
+import jakarta.validation.constraints.Min;
+import jakarta.ws.rs.FormParam;
 
 public class BindingBaseForm {
 

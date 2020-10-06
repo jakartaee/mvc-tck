@@ -15,8 +15,8 @@
  */
 package org.mvcspec.tck.tests.security.csrf.header;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -27,7 +27,7 @@ public class CsrfCustomHeaderApplication extends Application {
     public Map<String, Object> getProperties() {
         Map<String, Object> properties = new LinkedHashMap<>();
         // TODO: Replace with actual constant from Csrf after updating the spec version
-        properties.put("javax.mvc.security.CsrfHeaderName", "X-CSRF-Custom-Header-Name");
+        properties.put("jakarta.mvc.security.CsrfHeaderName", "X-CSRF-Custom-Header-Name");
         return properties;
     }
 

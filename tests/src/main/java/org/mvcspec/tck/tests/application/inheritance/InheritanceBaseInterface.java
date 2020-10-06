@@ -15,9 +15,9 @@
  */
 package org.mvcspec.tck.tests.application.inheritance;
 
-import javax.mvc.View;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.mvc.View;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 public interface InheritanceBaseInterface {
 
