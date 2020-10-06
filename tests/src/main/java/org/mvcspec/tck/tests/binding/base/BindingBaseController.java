@@ -15,17 +15,17 @@
  */
 package org.mvcspec.tck.tests.binding.base;
 
-import javax.inject.Inject;
-import javax.mvc.Controller;
-import javax.mvc.Models;
-import javax.mvc.binding.BindingError;
-import javax.mvc.binding.BindingResult;
-import javax.mvc.binding.ValidationError;
-import javax.validation.Valid;
-import javax.ws.rs.BeanParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import jakarta.inject.Inject;
+import jakarta.mvc.Controller;
+import jakarta.mvc.Models;
+import jakarta.mvc.binding.BindingError;
+import jakarta.mvc.binding.BindingResult;
+import jakarta.mvc.binding.ValidationError;
+import jakarta.validation.Valid;
+import jakarta.ws.rs.BeanParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
 
 @Controller
 @Path("binding/base")

@@ -15,9 +15,9 @@
  */
 package org.mvcspec.tck.tests.binding.types;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.mvc.locale.LocaleResolver;
-import javax.mvc.locale.LocaleResolverContext;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.mvc.locale.LocaleResolver;
+import jakarta.mvc.locale.LocaleResolverContext;
 import java.util.Locale;
 
 @ApplicationScoped

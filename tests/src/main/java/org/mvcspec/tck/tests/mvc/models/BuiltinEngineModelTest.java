@@ -83,7 +83,7 @@ public class BuiltinEngineModelTest {
     }
 
     /**
-     * javax.mvc.Models can be accessed from a JSP view
+     * jakarta.mvc.Models can be accessed from a JSP view
      */
     @Test
     @SpecAssertions({
@@ -123,7 +123,7 @@ public class BuiltinEngineModelTest {
     }
 
     /**
-     * javax.mvc.Models can be accessed from a Facelets view
+     * jakarta.mvc.Models can be accessed from a Facelets view
      */
     @Test
     @SpecAssertions({

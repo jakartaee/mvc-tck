@@ -15,7 +15,7 @@
  */
 package org.mvcspec.tck.tests.application.app;
 
-import javax.ws.rs.core.Application;
+import jakarta.ws.rs.core.Application;
 
 // No @ApplicationPath annotation, configuration via web.xml
 public class MvcAppWebXmlApplication extends Application {

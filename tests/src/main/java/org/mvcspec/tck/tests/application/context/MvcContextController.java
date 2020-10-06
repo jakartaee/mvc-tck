@@ -15,14 +15,14 @@
  */
 package org.mvcspec.tck.tests.application.context;
 
-import javax.enterprise.inject.spi.Bean;
-import javax.enterprise.inject.spi.BeanManager;
-import javax.inject.Inject;
-import javax.mvc.Controller;
-import javax.mvc.Models;
-import javax.mvc.MvcContext;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.enterprise.inject.spi.Bean;
+import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.inject.Inject;
+import jakarta.mvc.Controller;
+import jakarta.mvc.Models;
+import jakarta.mvc.MvcContext;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 import java.util.Set;
 
 @Controller

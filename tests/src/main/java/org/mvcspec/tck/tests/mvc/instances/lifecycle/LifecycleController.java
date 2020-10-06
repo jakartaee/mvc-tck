@@ -15,12 +15,12 @@
  */
 package org.mvcspec.tck.tests.mvc.instances.lifecycle;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.mvc.Models;
-import javax.mvc.Controller;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
+import jakarta.mvc.Models;
+import jakarta.mvc.Controller;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller

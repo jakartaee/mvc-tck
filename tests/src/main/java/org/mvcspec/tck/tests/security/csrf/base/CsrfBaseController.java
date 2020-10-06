@@ -15,13 +15,13 @@
  */
 package org.mvcspec.tck.tests.security.csrf.base;
 
-import javax.inject.Inject;
-import javax.mvc.Controller;
-import javax.mvc.Models;
-import javax.mvc.MvcContext;
-import javax.mvc.security.CsrfProtected;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.inject.Inject;
+import jakarta.mvc.Controller;
+import jakarta.mvc.Models;
+import jakarta.mvc.MvcContext;
+import jakarta.mvc.security.CsrfProtected;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 @Controller
 @Path("csrf/base")

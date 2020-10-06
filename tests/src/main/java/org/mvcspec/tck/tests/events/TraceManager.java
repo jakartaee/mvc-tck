@@ -15,10 +15,10 @@
  */
 package org.mvcspec.tck.tests.events;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.mvc.event.MvcEvent;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.mvc.event.MvcEvent;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -36,7 +36,7 @@ public class TraceManager {
     void eventObserved(MvcEvent event) {
 
         Class<?> eventType = Arrays.stream(event.getClass().getInterfaces())
-                .filter(type -> type.getPackage().getName().startsWith("javax.mvc"))
+                .filter(type -> type.getPackage().getName().startsWith("jakarta.mvc"))
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("Cannot identify event type"));
 

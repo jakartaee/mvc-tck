@@ -16,12 +16,12 @@
 
 package org.mvcspec.tck.tests.viewengine.base;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.mvc.engine.ViewEngine;
-import javax.mvc.engine.ViewEngineContext;
-import javax.mvc.engine.ViewEngineException;
-import javax.servlet.ServletContext;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.mvc.engine.ViewEngine;
+import jakarta.mvc.engine.ViewEngineContext;
+import jakarta.mvc.engine.ViewEngineException;
+import jakarta.servlet.ServletContext;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

@@ -15,12 +15,12 @@
  */
 package org.mvcspec.tck.tests.security.csrf.exception;
 
-import javax.mvc.Controller;
-import javax.mvc.security.CsrfProtected;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import jakarta.mvc.Controller;
+import jakarta.mvc.security.CsrfProtected;
+import jakarta.ws.rs.FormParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
 
 @Controller
 @Path("csrf/exception")
