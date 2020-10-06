@@ -1,0 +1,39 @@
+/*
+ * Copyright © 2017 Christian Kaltepoth
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0, which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the
+ * Eclipse Public License v. 2.0 are satisfied: GNU General Public License,
+ * version 2 with the GNU Classpath Exception, which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ */
+package jakarta.mvc.tck.util;
+
+public class Reflection {
+
+    public static <T> T createInstance(Class<T> clazz) {
+        try {
+            return clazz.cast(clazz.newInstance());
+        } catch (IllegalAccessException e) {
+            throw new IllegalStateException("Cannot find public default constructor: " + clazz.getName());
+        } catch (InstantiationException e) {
+            throw new IllegalStateException("Failed to create instance", e);
+        }
+    }
+
+    public static <T> Class<T> loadClass(String fqcn) {
+        try {
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            return (Class<T>) classLoader.loadClass(fqcn);
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("Cannot find class: " + fqcn);
+        }
+    }
+
+}
