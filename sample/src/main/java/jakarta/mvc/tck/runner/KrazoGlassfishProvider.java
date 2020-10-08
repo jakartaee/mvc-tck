@@ -18,7 +18,7 @@ package jakarta.mvc.tck.runner;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
-import org.mvcspec.tck.api.BaseArchiveProvider;
+import jakarta.mvc.tck.api.BaseArchiveProvider;
 
 import java.io.File;
 
@@ -30,9 +30,9 @@ public class KrazoGlassfishProvider implements BaseArchiveProvider {
         File[] dependencies = //Maven.resolver()
                 Maven.configureResolver().withMavenCentralRepo(false)
                         .resolve(
-                                "jakarta.mvc:jakarta.mvc-api:1.1.0",
-                                "org.eclipse.krazo:krazo-core:1.1.0",
-                                "org.eclipse.krazo:krazo-jersey:1.1.0"
+                                "jakarta.mvc:jakarta.mvc-api:2.0.0.M1",
+                                "org.eclipse.krazo:krazo-core:2.0.0",
+                                "org.eclipse.krazo:krazo-jersey:2.0.0"
                         )
                         .withoutTransitivity()
                         .asFile();
