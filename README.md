@@ -11,6 +11,8 @@ Run the Maven build for the TCK:
 
 ## Run Sample Runner
 
+This is an example for quickly running the TCK against Krazo on GlassFish. For other configurations, refer to the TCK Documentation and Usage Guide.
+
 Download and unpack the latest Glassfish 5 Promoted Build:
 
     https://eclipse-ee4j.github.io/glassfish/download
@@ -23,6 +25,6 @@ Start Glassfish:
 Now execute the sample runner to run the tests against Eclipse Krazo deployed to Glassfish:
 
     cd <TCK_HOME>/sample/
-    mvn clean test
+    mvn verify
     
 Of course all the tests should pass. :-)
