@@ -104,7 +104,7 @@ public class MvcContextTest {
 
         assertThat(page.getWebResponse().getStatusCode(), equalTo(200));
         assertThat(page.getWebResponse().getContentAsString(),
-                containsString("MvcContext scope = [javax.enterprise.context.RequestScoped]"));
+                containsString("MvcContext scope = [jakarta.enterprise.context.RequestScoped]"));
 
     }
 
