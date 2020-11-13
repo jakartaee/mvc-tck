@@ -1,6 +1,7 @@
 ////
 
     Copyright © 2019 Christian Kaltepoth
+    Copyright © 2020 Copyright (c) 2020 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -15,8 +16,8 @@
     SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
 
 ////
-= MVC 1.0 Technology Compatibility Kit: Documentation & Usage Guide
-Christian Kaltepoth
+= Jakarta MVC {mvc-spec-version} Technology Compatibility Kit: Documentation & Usage Guide
+Jakarta MVC Project
 Version {tck-version}
 
 // Settings:

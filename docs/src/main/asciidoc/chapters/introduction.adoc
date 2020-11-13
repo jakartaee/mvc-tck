@@ -1,6 +1,7 @@
 ////
 
     Copyright © 2019 Christian Kaltepoth
+    Copyright © 2020 Copyright (c) 2020 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -18,7 +19,7 @@
 == Introduction
 
 This guide describes how to download, install and run the Technology Compatibility Kit (TCK) for the
-Model-View-Controller Specification 1.0.
+Jakarta MVC Specification {mvc-spec-version}.
 
 === TCK Primer
 
@@ -56,7 +57,7 @@ corresponding assertion.
 
 === About the MVC TCK
 
-The MVC 1.0 TCK is designed as a portable, configurable and automated test suite for verifying the compatibility
+The Jakarta MVC {mvc-spec-version} TCK is designed as a portable, configurable and automated test suite for verifying the compatibility
 of an implementation of the Model-View-Controller Specification.
 The test suite is built atop JUnit and provides a series of extensions that allow runtime packaging
 and deployment of Java EE artifacts for in-container testing (Arquillian).
@@ -66,13 +67,13 @@ defined in a declarative way using annotations.
 
 === TCK Components
 
-The MVC 1.0 TCK includes the following components:
+The Jakarta MVC {mvc-spec-version} TCK includes the following components:
 
 * **The test suite**, which is a collection of JUnit tests and supplemental resources
 that configure the runtime and other software components.
 
 * **The TCK audit** (`tck-audit.xml`) used to list out the assertions identified in the
-MVC 1.0 specification. It matches the assertions to test cases in the test suite by
+Jakarta MVC {mvc-spec-version} specification. It matches the assertions to test cases in the test suite by
 unique identifier and produces a coverage report. The audit document is provided
 along with the TCK. Each assertion is defined with a reference to a chapter,
 section and paragraph from the specification document, making it easy for the
@@ -81,9 +82,9 @@ supports the feature being tested.
 
 * A **setup example** demonstrating Maven and Ant setups to run the TCK test suite.
 
-=== Passing the MVC 1.0 TCK
+=== Passing the Jakarta MVC {mvc-spec-version} TCK
 
-In order to pass the MVC 1.0 TCK, you need to:
+In order to pass the Jakarta MVC {mvc-spec-version} TCK, you need to:
 
-* Pass the MVC 1.0 signature tests (see <<running_sig_tests>>) asserting the correctness of the MVC 1.0 API used.
+* Pass the Jakarta MVC {mvc-spec-version} signature tests (see <<running_sig_tests>>) asserting the correctness of the Jakarta MVC {mvc-spec-version} API used.
 * Run and pass the test suite (see <<running_tck_tests>>).
