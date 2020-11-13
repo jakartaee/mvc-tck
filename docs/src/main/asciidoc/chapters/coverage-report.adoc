@@ -1,6 +1,7 @@
 ////
 
     Copyright © 2019 Christian Kaltepoth
+    Copyright © 2020 Copyright (c) 2020 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -18,14 +19,14 @@
 == Coverage report
 
 A specification can be distilled into a collection of assertions that define the behavior of the software.
-This section introduces the MVC 1.0 TCK coverage report, which documents the relationship between the assertions
-that have been identified in the MVC 1.0 specification document and the tests in the TCK test suite.
+This section introduces the Jakarta MVC {mvc-spec-version} TCK coverage report, which documents the relationship between the assertions
+that have been identified in the Jakarta MVC {mvc-spec-version} specification document and the tests in the TCK test suite.
 
 The structure of this report is controlled by the assertion document, so we’ll start there.
 
-=== MVC 1.0 TCK Assertions
+=== Jakarta MVC {mvc-spec-version} TCK Assertions
 
-The MVC 1.0 TCK developers have analyzed the MVC 1.0 specification document and identified the assertions that
+The Jakarta MVC {mvc-spec-version} TCK developers have analyzed the Jakarta MVC {mvc-spec-version} specification document and identified the assertions that
 are present in each chapter.
 
 The assertions are listed in an XML file which is generated from the specification document.
@@ -45,7 +46,7 @@ See the following example of an example:
 </section>
 ----
 
-The strategy of the MVC 1.0 TCK is to write a test which validates this assertion when run against an implementation.
+The strategy of the Jakarta MVC {mvc-spec-version} TCK is to write a test which validates this assertion when run against an implementation.
 A test case (a method annotated with `@Test`) is correlated with an assertion using the
 `@org.jboss.test.audit.annotations.SpecAssertion` annotation as follows:
 

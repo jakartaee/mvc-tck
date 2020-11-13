@@ -1,6 +1,7 @@
 ////
 
     Copyright © 2019 Christian Kaltepoth
+    Copyright © 2020 Copyright (c) 2020 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -18,7 +19,7 @@
 [[running_sig_tests]]
 == Running the signature tests
 
-One of the requirements of an implementation passing the TCK is for it to pass the MVC 1.0 signature test.
+One of the requirements of an implementation passing the TCK is for it to pass the Jakarta MVC {mvc-spec-version} signature test.
 This section describes how to run it against your implementation.
 
 === Obtaining the sigtest tool
@@ -75,7 +76,7 @@ First you will need to get the Java EE 8 API JAR. You can download this directly
 wget https://repo1.maven.org/maven2/javax/javaee-api/8.0/javaee-api-8.0.jar
 ----
 
-Next, you will need the implementation JAR of the MVC 1.0 API.
+Next, you will need the implementation JAR of the Jakarta MVC {mvc-spec-version} API.
 In this example we will simply use the official API JAR.
 
 [source,sh,subs="attributes"]

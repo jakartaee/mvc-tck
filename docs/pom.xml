@@ -64,6 +64,7 @@
                                 <linkcss>false</linkcss>
                                 <tck-version>${project.version}</tck-version>
                                 <mvc-api-version>${mvc-api.version}</mvc-api-version>
+                                <mvc-spec-version>${mvc-spec.version}</mvc-spec-version>
                                 <krazo-version>${krazo.version}</krazo-version>
                             </attributes>
                             <outputFile>${project.build.directory}/generated-docs/index.html</outputFile>
