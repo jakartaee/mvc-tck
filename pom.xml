@@ -42,7 +42,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <mvc-spec.version>2.0</mvc-spec.version>
-        <mvc-api.version>2.0.0.M1</mvc-api.version>
+        <mvc-api.version>2.0.0.RC1</mvc-api.version>
     </properties>
 
     <licenses>
