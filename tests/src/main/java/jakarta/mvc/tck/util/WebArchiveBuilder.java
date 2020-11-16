@@ -67,7 +67,7 @@ public class WebArchiveBuilder {
     public WebArchiveBuilder addBeansXml(String discoveryMode) {
         return addBeansXml(
                 Descriptors.create(BeansDescriptor.class)
-                        .addDefaultNamespaces()
+                        .addNamespace("https://jakarta.ee/xml/ns/jakartaee", "https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd")
                         .beanDiscoveryMode(discoveryMode)
         );
     }
@@ -82,7 +82,8 @@ public class WebArchiveBuilder {
         // empty JSF 2.2 descriptor
         WebFacesConfigDescriptor descriptor = Descriptors.create(WebFacesConfigDescriptor.class)
                 .addDefaultNamespaces()
-                .version("2.2");
+                .addNamespace("https://jakarta.ee/xml/ns/jakartaee", "https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd")
+                .version("3.0");
 
         archive.addAsWebInfResource(new StringAsset(descriptor.exportAsString()), "faces-config.xml");
         return this;
@@ -93,11 +94,11 @@ public class WebArchiveBuilder {
 
         // Servlet descriptor with FacesServlet registered
         WebAppDescriptor descriptor = Descriptors.create(WebAppDescriptor.class)
-                .addDefaultNamespaces()
-                .version("3.1")
+                .addNamespace("https://jakarta.ee/xml/ns/jakartaee", "https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd")
+                .version("5.0")
                 .createServlet()
                 .servletName("FacesServlet")
-                .servletClass("javax.faces.webapp.FacesServlet")
+                .servletClass("jakarta.faces.webapp.FacesServlet")
                 .up()
                 .createServletMapping()
                 .servletName("FacesServlet")

@@ -73,7 +73,7 @@ First you will need to get the Java EE 8 API JAR. You can download this directly
 
 [source,sh]
 ----
-wget https://repo1.maven.org/maven2/javax/javaee-api/8.0/javaee-api-8.0.jar
+wget https://repo1.maven.org/maven2/jakarta/platform/jakarta.jakartaee-api/9.0.0/jakarta.jakartaee-api-9.0.0.jar
 ----
 
 Next, you will need the implementation JAR of the Jakarta MVC {mvc-spec-version} API.
@@ -81,14 +81,14 @@ In this example we will simply use the official API JAR.
 
 [source,sh,subs="attributes"]
 ----
-wget https://repo1.maven.org/maven2/javax/mvc/javax.mvc-api/{mvc-api-version}/javax.mvc-api-{mvc-api-version}.jar
+wget https://repo1.maven.org/maven2/jakarta/mvc/jakarta.mvc-api/{mvc-api-version}/jakarta.mvc-api-{mvc-api-version}.jar
 ----
 
 Finally you will need the `.sigtest` definition file, which you can also get from Maven Central:
 
 [source,sh,subs="attributes"]
 ----
-wget https://repo1.maven.org/maven2/org/mvc-spec/tck/mvc-tck-sigtest/{tck-version}/mvc-tck-sigtest-{tck-version}.sigfile
+wget https://repo1.maven.org/maven2/jakarta/mvc/tck/mvc-tck-sigtest/{tck-version}/mvc-tck-sigtest-{tck-version}.sigfile
 ----
 
 Now you are ready to run the signature tests.
@@ -98,8 +98,8 @@ Now you are ready to run the signature tests.
 [source,sh,subs="attributes"]
 ----
 ${JAVA_HOME}/bin/java -jar ${SIGTEST_HOME}/lib/sigtestdev.jar SignatureTest \
-  -Classpath "${JAVA_HOME}/jre/lib/rt.jar:./javaee-api-8.0.jar:./javax.mvc-api-{mvc-api-version}.jar" \
-  -Package javax.mvc \
+  -Classpath "${JAVA_HOME}/jre/lib/rt.jar:./jakarta.jakartaee-api-9.0.0.jar:./jakarta.mvc-api-{mvc-api-version}.jar" \
+  -Package jakarta.mvc \
   -FileName ./mvc-tck-sigtest-{tck-version}.sigfile \
   -static
 ----
@@ -124,12 +124,12 @@ To verify that the signature test works correctly, you can modify the signature 
 
 [source,plain]
 ----
-CLSS public abstract interface javax.mvc.Models
+CLSS public abstract interface jakarta.mvc.Models
 intf java.lang.Iterable<java.lang.String>
 meth public abstract <%0 extends java.lang.Object> {%%0} get(java.lang.String,java.lang.Class<{%%0}>)
 meth public abstract java.lang.Object get(java.lang.String)
 meth public abstract java.util.Map<java.lang.String,java.lang.Object> asMap()
-meth public abstract javax.mvc.Models put(java.lang.String,java.lang.Object)
+meth public abstract jakarta.mvc.Models put(java.lang.String,java.lang.Object)
 ----
 
 You can for example delete the line containing the definition of the `get` method.
@@ -147,7 +147,7 @@ Constant checking: on
 Added Methods
 -------------
 
-javax.mvc.Models:   method public abstract java.lang.Object javax.mvc.Models.get(java.lang.String)
+jakarta.mvc.Models:   method public abstract java.lang.Object jakarta.mvc.Models.get(java.lang.String)
 
 
 STATUS:Failed.1 errors
