@@ -67,12 +67,17 @@ public class WebArchiveBuilder {
     public WebArchiveBuilder addBeansXml(String discoveryMode) {
         return addBeansXml(
                 Descriptors.create(BeansDescriptor.class)
-                        .addNamespace("https://jakarta.ee/xml/ns/jakartaee", "https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd")
+                        .addDefaultNamespaces()
                         .beanDiscoveryMode(discoveryMode)
         );
     }
 
     public WebArchiveBuilder addBeansXml(BeansDescriptor descriptor) {
+
+        final String beans30Xml = descriptor.exportAsString()
+                .replace("http://xmlns.jcp.org/xml/ns/javaee", "https://jakarta.ee/xml/ns/jakartaee")
+                .replace("/beans_1_1.xsd", "/beans_3_0.xsd");
+
         archive.addAsWebInfResource(new StringAsset(descriptor.exportAsString()), "beans.xml");
         return this;
     }
@@ -82,10 +87,13 @@ public class WebArchiveBuilder {
         // empty JSF 2.2 descriptor
         WebFacesConfigDescriptor descriptor = Descriptors.create(WebFacesConfigDescriptor.class)
                 .addDefaultNamespaces()
-                .addNamespace("https://jakarta.ee/xml/ns/jakartaee", "https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd")
                 .version("3.0");
 
-        archive.addAsWebInfResource(new StringAsset(descriptor.exportAsString()), "faces-config.xml");
+        final String faces30Version = descriptor.exportAsString()
+                .replace("http://xmlns.jcp.org/xml/ns/javaee", "https://jakarta.ee/xml/ns/jakartaee")
+                .replace("/web-facesconfig_2_2.xsd", "/web-facesconfig_3_0.xsd");
+
+        archive.addAsWebInfResource(new StringAsset(faces30Version), "faces-config.xml");
         return this;
 
     }
@@ -94,7 +102,7 @@ public class WebArchiveBuilder {
 
         // Servlet descriptor with FacesServlet registered
         WebAppDescriptor descriptor = Descriptors.create(WebAppDescriptor.class)
-                .addNamespace("https://jakarta.ee/xml/ns/jakartaee", "https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd")
+                .addDefaultNamespaces()
                 .version("5.0")
                 .createServlet()
                 .servletName("FacesServlet")
@@ -110,7 +118,12 @@ public class WebArchiveBuilder {
     }
 
     public WebArchiveBuilder withWebXml(WebAppDescriptor descriptor) {
-        archive.addAsWebInfResource(new StringAsset(descriptor.exportAsString()), "web.xml");
+
+        final String web50Version = descriptor.exportAsString()
+                .replace("http://xmlns.jcp.org/xml/ns/javaee", "https://jakarta.ee/xml/ns/jakartaee")
+                .replace("/web-app_3_1.xsd", "/web-app_5_0.xsd");
+
+        archive.addAsWebInfResource(new StringAsset(web50Version), "web.xml");
         return this;
     }
 
