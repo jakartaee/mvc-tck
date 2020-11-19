@@ -13,7 +13,7 @@ Run the Maven build for the TCK:
 
 This is an example for quickly running the TCK against Krazo on GlassFish. For other configurations, refer to the TCK Documentation and Usage Guide.
 
-Download and unpack the latest Glassfish 5 Promoted Build:
+Download and unpack the latest Glassfish Promoted Build:
 
     https://eclipse-ee4j.github.io/glassfish/download
     
