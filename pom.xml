@@ -23,7 +23,7 @@
 
     <groupId>jakarta.mvc.tck</groupId>
     <artifactId>mvc-tck-parent</artifactId>
-    <version>2.0.0.RC3</version>
+    <version>2.0.0</version>
     <packaging>pom</packaging>
 
     <name>Jakarta MVC TCK - Parent</name>
@@ -43,7 +43,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.version>8</maven.compiler.version>
         <mvc-spec.version>2.0</mvc-spec.version>
-        <mvc-api.version>2.0.0.RC2</mvc-api.version>
+        <mvc-api.version>2.0.0</mvc-api.version>
     </properties>
 
     <licenses>
@@ -90,6 +90,12 @@
             <id>chkal</id>
             <email>christian@kaltepoth.de</email>
             <name>Christian Kaltepoth</name>
+            <timezone>CET</timezone>
+        </developer>
+        <developer>
+            <id>ivargrimstad</id>
+            <email>ivar.grimstad@eclipse-foundation.org</email>
+            <name>Ivar Grimstad</name>
             <timezone>CET</timezone>
         </developer>
     </developers>
