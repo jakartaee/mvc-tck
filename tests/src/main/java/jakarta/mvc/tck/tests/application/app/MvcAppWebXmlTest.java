@@ -40,7 +40,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 @RunWith(Arquillian.class)
-@SpecVersion(spec = "mvc", version = "1.0")
+@SpecVersion(spec = "mvc", version = "2.0")
 public class MvcAppWebXmlTest {
 
     @ArquillianResource
@@ -54,7 +54,7 @@ public class MvcAppWebXmlTest {
         // custom web.xml for configuration according to 2.3.2 of the JAX-RS 2.1 spec
         WebAppDescriptor descriptor = Descriptors.create(WebAppDescriptor.class)
                 .addDefaultNamespaces()
-                .version("3.1")
+                .version("5.0")
                 .createServlet()
                 .servletName(MvcAppWebXmlApplication.class.getName())
                 .up()
