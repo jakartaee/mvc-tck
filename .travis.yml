@@ -2,5 +2,5 @@ language: java
 jdk: openjdk11
 install: /bin/true
 script:
-  - mvn -B -s .travis/deploy-settings.xml -Dcoverage-report clean install -Pstaging
+  - mvn -B -V clean install -Pstaging
 
