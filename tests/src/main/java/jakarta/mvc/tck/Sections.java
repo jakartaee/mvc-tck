@@ -67,4 +67,8 @@ public class Sections {
     public static final String I18N_RESOLVING_ALGORITHM = "i18n_resolving_algorithm";
     public static final String I18N_DEFAULT_RESOLVER = "i18n_default_resolver";
 
+    /*
+     * Chapter: Form method overwrite
+     */
+    public static final String FORM_METHOD_OVERWRITE_ALGORITHM = "form_method_overwrite_resolving_algorithm";
 }
