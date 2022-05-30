@@ -1,5 +1,5 @@
 /*
- * Copyright © 2018 Christian Kaltepoth
+ * Copyright © 2018-2022 Christian Kaltepoth
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -33,7 +33,7 @@ public class TraceManager {
     @Inject
     private HttpServletRequest request;
 
-    void eventObserved(MvcEvent event) {
+    public void eventObserved(MvcEvent event) {
 
         Class<?> eventType = Arrays.stream(event.getClass().getInterfaces())
                 .filter(type -> type.getPackage().getName().startsWith("jakarta.mvc"))
@@ -44,15 +44,15 @@ public class TraceManager {
 
     }
 
-    void controllerExecuted() {
+    public void controllerExecuted() {
         logInternal("ControllerExecuted");
     }
 
-    void viewRendered() {
+    public void viewRendered() {
         logInternal("ViewRendered");
     }
 
-    TracedRequest getTracedRequest(String id) {
+    public TracedRequest getTracedRequest(String id) {
         return tracedRequests.get(id);
     }
 

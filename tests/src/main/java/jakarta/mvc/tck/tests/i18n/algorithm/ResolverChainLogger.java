@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 Christian Kaltepoth
+ * Copyright © 2019-2022 Christian Kaltepoth
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -27,7 +27,7 @@ public class ResolverChainLogger {
 
     private List<String> classes = new ArrayList<>();
 
-    void log(Class<?> clazz) {
+    public void log(Class<?> clazz) {
         classes.add(clazz.getSimpleName());
     }
 
