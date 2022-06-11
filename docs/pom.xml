@@ -33,7 +33,7 @@
     <description>Technology Compatibility Kit for Jakarta MVC</description>
 
     <properties>
-        <krazo.version>2.0.0</krazo.version>
+        <krazo.version>2.0.1</krazo.version>
     </properties>
 
     <build>

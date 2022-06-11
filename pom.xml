@@ -43,7 +43,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.version>8</maven.compiler.version>
         <mvc-spec.version>2.0</mvc-spec.version>
-        <mvc-api.version>2.0.0</mvc-api.version>
+        <mvc-api.version>2.0.1</mvc-api.version>
     </properties>
 
     <licenses>
