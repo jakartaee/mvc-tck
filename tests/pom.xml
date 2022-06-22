@@ -35,6 +35,18 @@
         <test.audit.version>1.1.4.Final</test.audit.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>jakarta.mvc.tck</groupId>
+                <artifactId>mvc-tck-bom</artifactId>
+                <version>${project.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
 
         <dependency>
@@ -45,7 +57,6 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <version>9.0.0-RC3</version>
             <scope>provided</scope>
         </dependency>
 
@@ -84,18 +95,6 @@
         </dependency>
 
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>jakarta.mvc.tck</groupId>
-                <artifactId>mvc-tck-bom</artifactId>
-                <version>${project.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <profiles>
 
@@ -175,5 +174,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>

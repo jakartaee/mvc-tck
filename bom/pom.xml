@@ -31,8 +31,16 @@
     <name>Jakarta MVC TCK - BOM</name>
     <description>Technology Compatibility Kit for Jakarta MVC</description>
 
-    <build>
+    <properties>
+        <jakartaee.version>9.1.0</jakartaee.version>
+        <arquillian.version>1.5.0.Final</arquillian.version>
+        <shrinkwrap-resolver.version>3.0.0</shrinkwrap-resolver.version>
+        <shrinkwrap-descriptors.version>2.0.0</shrinkwrap-descriptors.version>
+        <htmlunit.version>2.37.0</htmlunit.version>
+        <junit.version>4.13.1</junit.version>
+    </properties>
 
+    <build>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -41,16 +49,14 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
     </build>
 
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>jakarta.platform</groupId>
                 <artifactId>jakarta.jakartaee-web-api</artifactId>
-                <version>9.0.0-RC3</version>
+                <version>${jakartaee.version}</version>
             </dependency>
 
             <dependency>
@@ -74,7 +80,7 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <version>1.5.0.Final</version>
+                <version>${arquillian.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -82,7 +88,7 @@
             <dependency>
                 <groupId>org.jboss.shrinkwrap.resolver</groupId>
                 <artifactId>shrinkwrap-resolver-bom</artifactId>
-                <version>3.0.0</version>
+                <version>${shrinkwrap-resolver.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -90,7 +96,7 @@
             <dependency>
                 <groupId>org.jboss.shrinkwrap.descriptors</groupId>
                 <artifactId>shrinkwrap-descriptors-bom</artifactId>
-                <version>2.0.0</version>
+                <version>${shrinkwrap-descriptors.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -98,16 +104,14 @@
             <dependency>
                 <groupId>net.sourceforge.htmlunit</groupId>
                 <artifactId>htmlunit</artifactId>
-                <version>2.37.0</version>
+                <version>${htmlunit.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.13.1</version>
+                <version>${junit.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
-
 </project>
