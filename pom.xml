@@ -33,17 +33,16 @@
     <parent>
         <groupId>org.eclipse.ee4j</groupId>
         <artifactId>project</artifactId>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
         <relativePath/>
     </parent>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.version>8</maven.compiler.version>
+        <maven.compiler.release>11</maven.compiler.release>
         <mvc-spec.version>2.1</mvc-spec.version>
-        <mvc-api.version>2.1.0.M1</mvc-api.version>
+        <mvc-api.version>2.1.0.RC1</mvc-api.version>
+        <jakartaee.version>10.0.0</jakartaee.version>
     </properties>
 
     <licenses>
@@ -104,6 +103,11 @@
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.10.1</version>
+                </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.19.1</version>
