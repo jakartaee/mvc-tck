@@ -39,7 +39,7 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.version>11</maven.compiler.version>
+        <maven.compiler.release>11</maven.compiler.release>
         <mvc-spec.version>2.1</mvc-spec.version>
         <mvc-api.version>2.1.0.RC1</mvc-api.version>
         <jakartaee.version>10.0.0</jakartaee.version>
@@ -103,6 +103,11 @@
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.10.1</version>
+                </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.19.1</version>
