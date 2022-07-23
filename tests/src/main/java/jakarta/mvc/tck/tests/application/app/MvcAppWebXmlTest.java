@@ -54,7 +54,7 @@ public class MvcAppWebXmlTest {
         // custom web.xml for configuration according to 2.3.2 of the JAX-RS 2.1 spec
         WebAppDescriptor descriptor = Descriptors.create(WebAppDescriptor.class)
                 .addDefaultNamespaces()
-                .version("5.0")
+                .version("6.0")
                 .createServlet()
                 .servletName(MvcAppWebXmlApplication.class.getName())
                 .up()
