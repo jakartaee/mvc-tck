@@ -23,7 +23,7 @@
 
     <groupId>jakarta.mvc.tck</groupId>
     <artifactId>mvc-tck-sample</artifactId>
-    <version>2.1.0.RC1</version>
+    <version>2.1.0.RC2</version>
 
     <name>Jakarta MVC TCK - Sample Runner</name>
     <description>Technology Compatibility Kit for Jakarta MVC</description>
