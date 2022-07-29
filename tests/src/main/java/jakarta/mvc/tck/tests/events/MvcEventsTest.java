@@ -15,6 +15,7 @@
  */
 package jakarta.mvc.tck.tests.events;
 
+import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.TextPage;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -99,7 +100,8 @@ public class MvcEventsTest {
 
         String tid = UUID.randomUUID().toString();
 
-        HtmlPage mvcPage = webClient.getPage(baseUrl.toString() + "mvc/events/controller-error?tid=" + tid);
+        // It seems that e. g. WildFly handles error pages as plain text
+        Page mvcPage = webClient.getPage(baseUrl.toString() + "mvc/events/controller-error?tid=" + tid);
         assertThat(mvcPage.getWebResponse().getStatusCode(), equalTo(500));
 
         TextPage tracePage = webClient.getPage(baseUrl.toString() + "trace?tid=" + tid);
