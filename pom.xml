@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <mvc-spec.version>2.1</mvc-spec.version>
-        <mvc-api.version>2.1.0.RC1</mvc-api.version>
+        <mvc-api.version>2.1.0</mvc-api.version>
         <jakartaee.version>10.0.0</jakartaee.version>
     </properties>
 
