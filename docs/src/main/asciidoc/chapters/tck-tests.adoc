@@ -40,7 +40,7 @@ The project is using Apache Maven is contains just three files:
   This file configures Arquillian to deploy the web applications which are used by the TCK tests to Eclipse Glassfish.
 
 `KrazoGlassfishProvider.java`::
-  This Java class is an implementation of the `BaseArchiveProvider` interface which is part of the TCK.
+  This Java class is an implementation of the `ee.jakarta.tck.mvc.api.BaseArchiveProvider` interface which is part of the TCK.
   The responsibility of the archive provider is to create a base Shrinkwrap archive which is used by all TCK
   tests. The archive produced by the provider depends on the specific environment you are running the tests
   against. As Jakarta MVC {mvc-spec-version} API and implementation is not provided by Eclipse Glassfish, the `KrazoGlassfishProvider`
@@ -165,9 +165,9 @@ The relevant section in the template project looks like this:
     <configuration>
         <dependenciesToScan>jakarta.mvc.tck:mvc-tck-tests</dependenciesToScan>
         <systemProperties>
-            <jakarta.mvc.tck.api.BaseArchiveProvider>
+            <BaseArchiveProvider>
                 jakarta.mvc.tck.runner.KrazoGlassfishProvider
-            </jakarta.mvc.tck.api.BaseArchiveProvider>
+            </BaseArchiveProvider>
         </systemProperties>
     </configuration>
 </plugin>

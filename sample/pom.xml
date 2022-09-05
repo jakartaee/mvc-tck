@@ -23,7 +23,7 @@
 
     <groupId>jakarta.mvc.tck</groupId>
     <artifactId>mvc-tck-sample</artifactId>
-    <version>2.1.0-SNAPSHOT/version>
+    <version>2.1.0-SNAPSHOT</version>
 
     <name>Jakarta MVC TCK - Sample Runner</name>
     <description>Technology Compatibility Kit for Jakarta MVC</description>
@@ -41,9 +41,9 @@
                 <configuration>
                     <dependenciesToScan>jakarta.mvc.tck:mvc-tck-tests</dependenciesToScan>
                     <systemProperties>
-                        <jakarta.mvc.tck.api.BaseArchiveProvider>
-                            jakarta.mvc.tck.runner.KrazoGlassfishProvider
-                        </jakarta.mvc.tck.api.BaseArchiveProvider>
+                        <ee.jakarta.tck.mvc.api.BaseArchiveProvider>
+                            ee.jakarta.tck.mvc.runner.KrazoGlassfishProvider
+                        </ee.jakarta.tck.mvc.api.BaseArchiveProvider>
                     </systemProperties>
                 </configuration>
             </plugin>
