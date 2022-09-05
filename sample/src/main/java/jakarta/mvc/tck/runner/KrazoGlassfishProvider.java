@@ -13,12 +13,12 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  */
-package jakarta.mvc.tck.runner;
+package ee.jakarta.tck.mvc.runner;
 
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
-import jakarta.mvc.tck.api.BaseArchiveProvider;
+import ee.jakarta.tck.mvc.api.BaseArchiveProvider;
 import org.jboss.shrinkwrap.resolver.api.maven.repository.MavenRemoteRepositories;
 import org.jboss.shrinkwrap.resolver.api.maven.repository.MavenRemoteRepository;
 
