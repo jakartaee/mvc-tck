@@ -18,53 +18,6 @@
 ////
 == Appeals Process
 
-The Jakarta MVC {mvc-spec-version} has been created with maximum care. However, it's reasonable to assume that an implementor may
-discover new and/or better ways to validate the assertions. This chapter covers the appeals process,
-defined by the Jakarta MVC {mvc-spec-version} Specification Leads, which allows implementors of the Jakarta MVC {mvc-spec-version} specification to
-challenge one or more tests defined by the Jakarta MVC {mvc-spec-version} TCK.
+As stated by the link:https://jakarta.ee/committees/specification/tckprocess/[TCK process,window=_blank], _Specifications are the sole source of truth and considered overruling to the TCK in all senses_. Therefore, during the implementation of a specification it can happen, that the implementing party is considering a test of this TCK as non-conform to the specification. To get this problem resolved, the implementing party can create a _challenge_ for the test.
 
-The appeals process identifies who can make challenges to the TCK, what challenges to the TCK may be submitted,
-how these challenges are submitted, how and by whom challenges are addressed
-and how accepted challenges to the TCK are managed.
-
-=== Who can make challenges to the TCK?
-
-Everybody may submit an appeal to challenge one or more tests in the Jakarta MVC {mvc-spec-version} TCK.
-In fact, the Specification Leads and members of the Jakarta MVC {mvc-spec-version} Expert Group encourage this level of participation.
-
-=== What challenges to the TCK may be submitted?
-
-Any test case (i.e. `@Test` method), test case configuration (i.e. `@Deployment`), test entities,
-annotations and other resources may be challenged by an appeal.
-
-What is generally not challengeable are the assertions made by the specification. The specification document
-is controlled by a separate process and challenges to it should be handled through the Jakarta MVC {mvc-spec-version} Expert Group.
-
-=== How these challenges are submitted?
-
-To submit a challenge, a new issue should be created in the https://github.com/mvc-spec/mvc-tck[mvc-tck] GitHub repository.
-The appellant should select the *TCK Challenge* template and answer the following questions:
-
-* The relevant specification version and section number(s)
-* The coordinates of the challenged test(s)
-* The exact TCK and exclude list versions
-* The implementation being tested, including name and company
-* The full test name
-* A full description of why the test is invalid and what the correct behavior is believed to be
-* Any supporting material; debug logs, test output, test logs, run scripts, etc.
-
-To submit an issue in the GitHub repository, you must have a (free) GitHub account.
-You can create a GitHub account using the https://github.com/join[on-line registration].
-
-=== How and by whom challenges are addressed?
-
-The challenges will be addressed in a timely fashion by the Jakarta MVC {mvc-spec-version} TCK Project Lead,
-as designated by Specification Lead, or his/her designate.
-The appellant can also monitor the process by watching the issue filed.
-
-=== How accepted challenges to the TCK are managed?
-
-Accepted challenges will be acknowledged via the filed issue's comment section.
-Communication between the Jakarta MVC {mvc-spec-version} TCK Project Lead and the appellant will take place via the issue comments.
-The issue's status will be set to "Closed" when the TCK project lead believes the issue to be resolved.
-The appellant should, within 30 days, comment on the issue if they do not believe the issue to be resolved.
+To file a challenge, please create an issue in the link:https://github.com/eclipse-ee4j/mvc-tck/issues/[MVC TCK issue tracker,window=_blank} as described in the link:https://jakarta.ee/committees/specification/tckprocess#_filing_a_challenge[TCK process - Filing a challenge,window=_blank].
