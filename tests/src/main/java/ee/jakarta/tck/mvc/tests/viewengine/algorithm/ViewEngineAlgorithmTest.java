@@ -52,7 +52,7 @@ public class ViewEngineAlgorithmTest {
                 .addClass(ViewEngineAlgorithmController.class)
                 .addClass(CustomHighPrioViewEngine.class)
                 .addClass(CustomLowPrioViewEngine.class)
-                .addClass(CustomFaceletsViewEngine.class)
+                .addClass(CustomJspViewEngine.class)
                 .addClass(NoMatchViewEngine.class)
                 .addView("viewengine/algo/view.jsp")
                 .build();
@@ -92,7 +92,7 @@ public class ViewEngineAlgorithmTest {
                 .getWebResponse();
 
         assertThat(response.getStatusCode(), equalTo(200));
-        assertThat(response.getContentAsString(), equalTo("CustomFaceletsViewEngine"));
+        assertThat(response.getContentAsString(), equalTo("CustomJspViewEngine"));
 
     }
 

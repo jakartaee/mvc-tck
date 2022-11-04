@@ -36,13 +36,6 @@ public class ViewEngineBaseController {
     }
 
     @GET
-    @Path("facelets")
-    public String facelets() {
-        models.put("engine", "Facelets");
-        return "viewengine/base/view.xhtml";
-    }
-
-    @GET
     @Path("custom")
     public String custom() {
         models.put("engine", "Custom");

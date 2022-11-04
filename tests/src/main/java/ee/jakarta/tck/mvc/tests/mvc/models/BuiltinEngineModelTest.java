@@ -53,11 +53,6 @@ public class BuiltinEngineModelTest {
                                 "<p>MVC-Model = [${modelsValue}]</p>\n" +
                                 "</html>",
                         "view.jsp")
-                .addView("<html>" +
-                                "<p>CDI-Model = [#{cdiModelBean.value}]</p>\n" +
-                                "<p>MVC-Model = [#{modelsValue}]</p>\n" +
-                                "</html>",
-                        "view.xhtml")
                 .build();
     }
 
@@ -101,44 +96,4 @@ public class BuiltinEngineModelTest {
         assertThat(response.getContentAsString(), containsString("MVC-Model = [jsp-bar]"));
 
     }
-
-    /**
-     * CDI models can be accessed from a Facelets view
-     */
-    @Test
-    @SpecAssertions({
-            @SpecAssertion(section = Sections.MVC_MODELS, id = "builtin-both-models"),
-            @SpecAssertion(section = Sections.MVC_MODELS, id = "cdi-model-inject"),
-            @SpecAssertion(section = Sections.MVC_MODELS, id = "cdi-model-el")
-    })
-    public void cdiModelFacelets() throws IOException {
-
-        WebResponse response = new WebClient()
-                .getPage(baseUrl.toString() + "mvc/builtin/facelets")
-                .getWebResponse();
-
-        assertThat(response.getStatusCode(), equalTo(200));
-        assertThat(response.getContentAsString(), containsString("CDI-Model = [facelets-foo]"));
-
-    }
-
-    /**
-     * jakarta.mvc.Models can be accessed from a Facelets view
-     */
-    @Test
-    @SpecAssertions({
-            @SpecAssertion(section = Sections.MVC_MODELS, id = "builtin-both-models"),
-            @SpecAssertion(section = Sections.MVC_MODELS, id = "models-inject")
-    })
-    public void mvcModelsFacelets() throws IOException {
-
-        WebResponse response = new WebClient()
-                .getPage(baseUrl.toString() + "mvc/builtin/facelets")
-                .getWebResponse();
-
-        assertThat(response.getStatusCode(), equalTo(200));
-        assertThat(response.getContentAsString(), containsString("MVC-Model = [facelets-bar]"));
-
-    }
-
 }
