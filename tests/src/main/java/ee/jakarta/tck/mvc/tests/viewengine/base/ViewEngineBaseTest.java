@@ -52,7 +52,6 @@ public class ViewEngineBaseTest {
                 .addClass(ViewEngineBaseController.class)
                 .addClass(CustomViewEngine.class)
                 .addView("viewengine/base/view.jsp")
-                .addView("viewengine/base/view.xhtml")
                 .addView("viewengine/base/view.custom")
                 .build();
     }
@@ -67,7 +66,7 @@ public class ViewEngineBaseTest {
 
     @Test
     @SpecAssertions({
-            @SpecAssertion(section = Sections.VIEW_ENGINE_INTRO, id = "jsp-facelets"),
+            @SpecAssertion(section = Sections.VIEW_ENGINE_INTRO, id = "jsp"),
             @SpecAssertion(section = Sections.VIEW_ENGINE_ALGORITHM, id = "models-binding")
     })
     public void viewEngineJsp() throws IOException {
@@ -78,22 +77,6 @@ public class ViewEngineBaseTest {
 
         assertThat(response.getStatusCode(), equalTo(200));
         assertThat(response.getContentAsString(), containsString("Rendered with the JSP view engine!"));
-
-    }
-
-    @Test
-    @SpecAssertions({
-            @SpecAssertion(section = Sections.VIEW_ENGINE_INTRO, id = "jsp-facelets"),
-            @SpecAssertion(section = Sections.VIEW_ENGINE_ALGORITHM, id = "models-binding")
-    })
-    public void viewEngineFacelets() throws IOException {
-
-        WebResponse response = webClient
-                .getPage(baseUrl.toString() + "mvc/viewengine/base/facelets")
-                .getWebResponse();
-
-        assertThat(response.getStatusCode(), equalTo(200));
-        assertThat(response.getContentAsString(), containsString("Rendered with the Facelets view engine!"));
 
     }
 

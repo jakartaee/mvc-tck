@@ -38,13 +38,4 @@ public class BuiltinEngineModelController {
         models.put("modelsValue", "jsp-bar");
         return "view.jsp";
     }
-
-    @GET
-    @Path("facelets")
-    public String facelets() {
-        cdiModelBean.setValue("facelets-foo");
-        models.put("modelsValue", "facelets-bar");
-        return "view.xhtml";
-    }
-
 }

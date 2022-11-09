@@ -25,11 +25,11 @@ import java.nio.charset.StandardCharsets;
 
 @ApplicationScoped
 @Priority(ViewEngine.PRIORITY_APPLICATION)
-public class CustomFaceletsViewEngine implements ViewEngine {
+public class CustomJspViewEngine implements ViewEngine {
 
     @Override
     public boolean supports(String view) {
-        return view.endsWith(".xhtml");
+        return view.endsWith(".jsp");
     }
 
     @Override
