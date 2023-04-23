@@ -15,9 +15,9 @@
  */
 package ee.jakarta.tck.mvc.tests.security;
 
+import jakarta.mvc.security.Csrf;
+
 public class CsrfConstants {
 
-    // TODO: Replace with Csrf.DEFAULT_CSRF_HEADER_NAME after updating spec version
-    public static final String CSRF_TOKEN_HEADER_NAME = "X-CSRF-TOKEN";
-
+    public static final String CSRF_TOKEN_HEADER_NAME = Csrf.DEFAULT_CSRF_HEADER_NAME;
 }

@@ -100,9 +100,7 @@ public class CsrfVerifyDefaultConfigTest extends AbstractCsrfVerifyTest {
 
         Page resultPage = submitForm("no-annotation", false, "David");
 
-        assertThat(resultPage.getWebResponse().getStatusCode(), equalTo(200));
-        assertThat(resultPage.getWebResponse().getContentAsString(), containsString("Hi David!"));
-
+        assertThat(resultPage.getWebResponse().getStatusCode(), equalTo(403));
     }
 
 }
