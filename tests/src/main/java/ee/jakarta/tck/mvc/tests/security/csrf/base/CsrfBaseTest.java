@@ -18,6 +18,7 @@ package ee.jakarta.tck.mvc.tests.security.csrf.base;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import jakarta.mvc.security.Csrf;
 import org.hamcrest.CoreMatchers;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -29,7 +30,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import ee.jakarta.tck.mvc.Sections;
-import ee.jakarta.tck.mvc.tests.security.CsrfConstants;
 import ee.jakarta.tck.mvc.util.Archives;
 import ee.jakarta.tck.mvc.util.MvcMatchers;
 
@@ -127,7 +127,7 @@ public class CsrfBaseTest {
         String hiddenFieldValue = hiddenField.getAttribute("value");
         assertThat(hiddenFieldValue, MvcMatchers.isNotBlank());
 
-        String headerValue = page.getWebResponse().getResponseHeaderValue(CsrfConstants.CSRF_TOKEN_HEADER_NAME);
+        String headerValue = page.getWebResponse().getResponseHeaderValue(Csrf.DEFAULT_CSRF_HEADER_NAME);
         assertThat(headerValue, MvcMatchers.isNotBlank());
         assertThat(headerValue, CoreMatchers.equalTo(hiddenFieldValue));
 
