@@ -23,6 +23,7 @@ import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.util.NameValuePair;
+import jakarta.mvc.security.Csrf;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -34,7 +35,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import ee.jakarta.tck.mvc.Sections;
-import ee.jakarta.tck.mvc.tests.security.CsrfConstants;
 import ee.jakarta.tck.mvc.util.Archives;
 import ee.jakarta.tck.mvc.util.MvcMatchers;
 
@@ -140,13 +140,13 @@ public class CsrfDefaultHeaderTest {
         assertThat(formPage.getWebResponse().getStatusCode(), equalTo(200));
 
         // get token from header
-        String token = formPage.getWebResponse().getResponseHeaderValue(CsrfConstants.CSRF_TOKEN_HEADER_NAME);
+        String token = formPage.getWebResponse().getResponseHeaderValue(Csrf.DEFAULT_CSRF_HEADER_NAME);
         assertThat(token, MvcMatchers.isNotBlank());
 
         // prepare post request with valid token
         WebRequest postRequest = new WebRequest(new URL(baseUrl.toString() + "mvc/csrf/header/process"));
         postRequest.setHttpMethod(HttpMethod.POST);
-        postRequest.setAdditionalHeader(CsrfConstants.CSRF_TOKEN_HEADER_NAME, token);
+        postRequest.setAdditionalHeader(Csrf.DEFAULT_CSRF_HEADER_NAME, token);
         postRequest.setRequestParameters(Collections.singletonList(
                 new NameValuePair("name", "Charlie")
         ));
@@ -172,7 +172,7 @@ public class CsrfDefaultHeaderTest {
         // prepare post request with valid token
         WebRequest postRequest = new WebRequest(new URL(baseUrl.toString() + "mvc/csrf/header/process"));
         postRequest.setHttpMethod(HttpMethod.POST);
-        postRequest.setAdditionalHeader(CsrfConstants.CSRF_TOKEN_HEADER_NAME, "INVALID-TOKEN");
+        postRequest.setAdditionalHeader(Csrf.DEFAULT_CSRF_HEADER_NAME, "INVALID-TOKEN");
         postRequest.setRequestParameters(Collections.singletonList(
                 new NameValuePair("name", "David")
         ));
