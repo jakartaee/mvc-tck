@@ -58,7 +58,7 @@
                     <descriptors>
                         <descriptor>${basedir}/src/main/assembly/dist.xml</descriptor>
                     </descriptors>
-                    <finalName>jakarta-mvc-tck-${project.version}</finalName>
+                    <finalName>jakarta-mvc-tck</finalName>
                 </configuration>
                 <executions>
                     <execution>

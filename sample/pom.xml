@@ -37,7 +37,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>3.2.3</version>
                 <configuration>
                     <dependenciesToScan>jakarta.mvc.tck:mvc-tck-tests</dependenciesToScan>
                     <systemProperties>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <version>10.0.0</version>
+            <version>11.0.0-M1</version>
             <scope>provided</scope>
         </dependency>
 
