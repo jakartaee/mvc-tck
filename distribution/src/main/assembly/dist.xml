@@ -91,7 +91,6 @@
                 Under a normal build when -Dlicense.file is not given, only the license.txt file is included.
                 -->
                 <include>${license.file}</include>
-                <include>LICENSE</include>
                 <include>README.md</include>
             </includes>
         </fileSet>

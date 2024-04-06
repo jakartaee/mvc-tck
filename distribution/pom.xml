@@ -32,6 +32,7 @@
     <properties>
         <mvc-tck-parent.basedir>${project.parent.basedir}</mvc-tck-parent.basedir>
         <maven.deploy.skip>true</maven.deploy.skip>
+        <license.file>LICENSE</license.file>
     </properties>
 
     <dependencies>
