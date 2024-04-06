@@ -39,7 +39,7 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
         <mvc-spec.version>3.0</mvc-spec.version>
         <mvc-api.version>3.0.0.M1</mvc-api.version>
         <jakartaee.version>11.0.0-M1</jakartaee.version>
