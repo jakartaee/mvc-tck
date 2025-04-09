@@ -41,7 +41,7 @@ public class KrazoGlassfishProvider implements BaseArchiveProvider {
 //                        .withRemoteRepo(stagingRepo)
                         .withMavenCentralRepo(false)
                         .resolve(
-                                "jakarta.mvc:jakarta.mvc-api:2.1.0",
+                                "jakarta.mvc:jakarta.mvc-api:3.0.0",
                                 "org.eclipse.krazo:krazo-core:3.0.0",
                                 "org.eclipse.krazo:krazo-jersey:3.0.0")
                         .withoutTransitivity()
