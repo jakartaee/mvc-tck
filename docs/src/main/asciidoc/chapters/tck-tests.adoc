@@ -1,7 +1,7 @@
 ////
 
     Copyright © 2019 Christian Kaltepoth
-    Copyright © 2020 Copyright (c) 2020 Contributors to the Eclipse Foundation
+    Copyright (c) 2020, 2025 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -28,7 +28,7 @@ It will give you a deeper understanding of the different parts described in the 
 
 The TCK contains a directory `sample` which contains an example project for running the TCK and
 which should be used as a template for creating new projects.
-This sample project is using the reference implementation Eclipse Krazo and runs the TCK against Eclipse Glassfish 6.0.0.
+This sample project is using the reference implementation Eclipse Krazo and runs the TCK against Eclipse Glassfish 8.x.
 
 The project is using Apache Maven is contains just three files:
 
@@ -47,8 +47,8 @@ The project is using Apache Maven is contains just three files:
   builds and archive which adds the API JAR and Eclipse Krazo to the `/WEB-INF/lib` directory of the archive so
   that both are deployed as part of the web application.
 
-Running the TCK is simple. First you have to download, unpack and start Eclipse GlassFish 6.0.0.
-Then just execute the following command in the sample project folder to run the TCK against this Eclipse GlassFish 6.0.0 instance:
+Running the TCK is simple. First you have to download, unpack and start Eclipse GlassFish 8.x.
+Then just execute the following command in the sample project folder to run the TCK against this Eclipse GlassFish 8.x instance:
 
 [source,sh]
 ----

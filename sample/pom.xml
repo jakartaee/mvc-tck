@@ -30,14 +30,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.version>11</maven.compiler.version>
+        <maven.compiler.version>17</maven.compiler.version>
     </properties>
 
     <build>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.3</version>
+                <version>3.5.3</version>
                 <configuration>
                     <dependenciesToScan>jakarta.mvc.tck:mvc-tck-tests</dependenciesToScan>
                     <systemProperties>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <version>11.0.0-M1</version>
+            <version>11.0.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -73,7 +73,7 @@
         <dependency>
             <groupId>org.jboss.arquillian.container</groupId>
             <artifactId>arquillian-glassfish-remote-3.1</artifactId>
-            <version>1.0.0.Final</version>
+            <version>1.0.2</version>
             <scope>test</scope>
         </dependency>
 

@@ -2,7 +2,7 @@
 <!--
 
     Copyright © 2017 Christian Kaltepoth
-    Copyright (c) 2020 Contributors to the Eclipse Foundation
+    Copyright (c) 2020, 2025 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -32,7 +32,7 @@
     <description>Technology Compatibility Kit for Jakarta MVC</description>
 
     <properties>
-        <test.audit.version>1.1.4.Final</test.audit.version>
+        <test.audit.version>2.0.0.Final</test.audit.version>
     </properties>
 
     <dependencies>
