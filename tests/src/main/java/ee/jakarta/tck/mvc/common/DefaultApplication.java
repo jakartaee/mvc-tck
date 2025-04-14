@@ -17,10 +17,22 @@ package ee.jakarta.tck.mvc.common;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
+import jakarta.mvc.security.Csrf;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @ApplicationPath("mvc")
 public class DefaultApplication extends Application {
 
     // defaults
+    @Override
+    public Map<String, Object> getProperties() {
+        final Map<String,Object> map = new HashMap<>();
+
+        map.put(Csrf.CSRF_PROTECTION, Csrf.CsrfOptions.EXPLICIT);
+
+        return map;
+    }
 
 }

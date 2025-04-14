@@ -30,21 +30,21 @@ public class KrazoGlassfishProvider implements BaseArchiveProvider {
     @Override
     public WebArchive getBaseArchive() {
 
-MavenRemoteRepository stagingRepo = MavenRemoteRepositories.createRemoteRepository(
-                "jakarta-staging",
-                "https://jakarta.oss.sonatype.org/content/groups/staging",
-                "default"
-        );
+// MavenRemoteRepository stagingRepo = MavenRemoteRepositories.createRemoteRepository(
+//                "jakarta-staging",
+//                "https://jakarta.oss.sonatype.org/content/groups/staging",
+//                "default"
+//        );
 
 
         File[] dependencies = //Maven.resolver()
                 Maven.configureResolver()
-                        .withRemoteRepo(stagingRepo)
+//                        .withRemoteRepo(stagingRepo)
                         .withMavenCentralRepo(false)
                         .resolve(
                                 "jakarta.mvc:jakarta.mvc-api:3.0.0",
-                                "org.eclipse.krazo:krazo-core:3.0.1",
-                                "org.eclipse.krazo:krazo-jersey:3.0.1")
+                                "org.eclipse.krazo:krazo-core:4.0.0-SNAPSHOT",
+                                "org.eclipse.krazo:krazo-jersey:4.0.0-SNAPSHOT")
                         .withoutTransitivity()
                         .asFile();
 
