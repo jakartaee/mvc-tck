@@ -76,7 +76,7 @@ public class WebArchiveBuilder {
 
         final String beans30Xml = descriptor.exportAsString()
                 .replace("http://xmlns.jcp.org/xml/ns/javaee", "https://jakarta.ee/xml/ns/jakartaee")
-                .replace("/beans_1_1.xsd", "/beans_4_0.xsd");
+                .replace("/beans_1_1.xsd", "/beans_4_1.xsd");
 
         archive.addAsWebInfResource(new StringAsset(descriptor.exportAsString()), "beans.xml");
         return this;
@@ -91,7 +91,7 @@ public class WebArchiveBuilder {
 
         final String faces30Version = descriptor.exportAsString()
                 .replace("http://xmlns.jcp.org/xml/ns/javaee", "https://jakarta.ee/xml/ns/jakartaee")
-                .replace("/web-facesconfig_2_2.xsd", "/web-facesconfig_4_0.xsd");
+                .replace("/web-facesconfig_2_2.xsd", "/web-facesconfig_4_1.xsd");
 
         archive.addAsWebInfResource(new StringAsset(faces30Version), "faces-config.xml");
         return this;
@@ -103,7 +103,7 @@ public class WebArchiveBuilder {
         // Servlet descriptor with FacesServlet registered
         WebAppDescriptor descriptor = Descriptors.create(WebAppDescriptor.class)
                 .addDefaultNamespaces()
-                .version("6.0")
+                .version("6.1")
                 .createServlet()
                 .servletName("FacesServlet")
                 .servletClass("jakarta.faces.webapp.FacesServlet")
@@ -121,7 +121,7 @@ public class WebArchiveBuilder {
 
         final String web50Version = descriptor.exportAsString()
                 .replace("http://xmlns.jcp.org/xml/ns/javaee", "https://jakarta.ee/xml/ns/jakartaee")
-                .replace("/web-app_3_1.xsd", "/web-app_6_0.xsd");
+                .replace("/web-app_3_1.xsd", "/web-app_6_1.xsd");
 
         archive.addAsWebInfResource(new StringAsset(web50Version), "web.xml");
         return this;

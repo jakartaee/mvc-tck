@@ -15,21 +15,22 @@
  */
 package ee.jakarta.tck.mvc.runner;
 
+import java.io.File;
+
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
-import ee.jakarta.tck.mvc.api.BaseArchiveProvider;
 import org.jboss.shrinkwrap.resolver.api.maven.repository.MavenRemoteRepositories;
 import org.jboss.shrinkwrap.resolver.api.maven.repository.MavenRemoteRepository;
 
-import java.io.File;
+import ee.jakarta.tck.mvc.api.BaseArchiveProvider;
 
 public class KrazoGlassfishProvider implements BaseArchiveProvider {
 
     @Override
     public WebArchive getBaseArchive() {
 
-//MavenRemoteRepository stagingRepo = MavenRemoteRepositories.createRemoteRepository(
+// MavenRemoteRepository stagingRepo = MavenRemoteRepositories.createRemoteRepository(
 //                "jakarta-staging",
 //                "https://jakarta.oss.sonatype.org/content/groups/staging",
 //                "default"
@@ -42,8 +43,8 @@ public class KrazoGlassfishProvider implements BaseArchiveProvider {
                         .withMavenCentralRepo(false)
                         .resolve(
                                 "jakarta.mvc:jakarta.mvc-api:3.0.0",
-                                "org.eclipse.krazo:krazo-core:3.0.0",
-                                "org.eclipse.krazo:krazo-jersey:3.0.0")
+                                "org.eclipse.krazo:krazo-core:4.0.0-SNAPSHOT",
+                                "org.eclipse.krazo:krazo-jersey:4.0.0-SNAPSHOT")
                         .withoutTransitivity()
                         .asFile();
 
