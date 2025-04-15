@@ -63,9 +63,6 @@
                 <exclude>.gitignore</exclude>
                 <exclude>sample/**</exclude>
                 <exclude>.idea/**</exclude>
-                <!-- Exclude license files from src dir so there is no confusion as to which license applies -->
-                <exclude>LICENSE</exclude>
-                <exclude>LICENSE_EFTL.md</exclude>
             </excludes>
             <useDefaultExcludes/>
         </fileSet>
@@ -90,7 +87,8 @@
                 <!-- Include both the EFTL.txt and license.txt in final build when -Dlicense.file=EFTL.txt is given.
                 Under a normal build when -Dlicense.file is not given, only the license.txt file is included.
                 -->
-                <include>${license.file}</include>
+                <!--<include>LICENSE</include>-->
+                <include>LICENSE_EFTL.md</include>
                 <include>README.md</include>
             </includes>
         </fileSet>
