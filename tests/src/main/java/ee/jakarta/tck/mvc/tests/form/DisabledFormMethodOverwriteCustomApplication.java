@@ -18,6 +18,7 @@
 package ee.jakarta.tck.mvc.tests.form;
 
 import jakarta.mvc.form.FormMethodOverwriter;
+import jakarta.mvc.security.Csrf;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 import java.util.LinkedHashMap;
@@ -30,6 +31,7 @@ public class DisabledFormMethodOverwriteCustomApplication extends Application {
     public Map<String, Object> getProperties() {
         Map<String, Object> properties = new LinkedHashMap<>();
         properties.put(FormMethodOverwriter.FORM_METHOD_OVERWRITE, FormMethodOverwriter.Options.DISABLED);
+        properties.put(Csrf.CSRF_PROTECTION, Csrf.CsrfOptions.OFF);
         return properties;
     }
 }

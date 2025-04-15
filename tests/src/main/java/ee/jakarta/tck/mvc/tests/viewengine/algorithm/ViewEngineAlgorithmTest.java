@@ -96,34 +96,4 @@ public class ViewEngineAlgorithmTest {
 
     }
 
-    @Test
-    @SpecAssertions({
-            @SpecAssertion(section = Sections.VIEW_ENGINE_ALGORITHM, id = "path-relative"),
-    })
-    public void relativeViewPath() throws IOException {
-
-        WebResponse response = webClient
-                .getPage(baseUrl.toString() + "mvc/viewengine/algorithm/relative-path")
-                .getWebResponse();
-
-        assertThat(response.getStatusCode(), equalTo(200));
-        assertThat(response.getContentAsString(), containsString("1 + 2 = 3"));
-
-    }
-
-    @Test
-    @SpecAssertions({
-            @SpecAssertion(section = Sections.VIEW_ENGINE_ALGORITHM, id = "path-absolute"),
-    })
-    public void absoluteViewPath() throws IOException {
-
-        WebResponse response = webClient
-                .getPage(baseUrl.toString() + "mvc/viewengine/algorithm/absolute-path")
-                .getWebResponse();
-
-        assertThat(response.getStatusCode(), equalTo(200));
-        assertThat(response.getContentAsString(), containsString("1 + 2 = 3"));
-
-    }
-
 }

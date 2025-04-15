@@ -13,12 +13,12 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  */
-package ee.jakarta.tck.mvc.tests.security.csrf.exception;
+package ee.jakarta.tck.mvc.tests.viewengine.algorithm;
 
-import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.DomElement;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.WebResponse;
+import ee.jakarta.tck.mvc.Sections;
+import ee.jakarta.tck.mvc.util.Archives;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -29,19 +29,17 @@ import org.jboss.test.audit.annotations.SpecVersion;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import ee.jakarta.tck.mvc.Sections;
-import ee.jakarta.tck.mvc.util.Archives;
 
 import java.io.IOException;
 import java.net.URL;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 @RunWith(Arquillian.class)
 @SpecVersion(spec = "mvc", version = "1.0")
-public class CsrfCustomMapperTest {
+public class ViewEngineAlgorithmPathTest {
 
     @ArquillianResource
     private URL baseUrl;
@@ -50,12 +48,12 @@ public class CsrfCustomMapperTest {
 
     @Deployment(testable = false)
     public static WebArchive createDeployment() {
-        return Archives.getMvcArchive(CsrfCustomMapperApplication.class)
-                .addClass(CsrfCustomMapperController.class)
-                .addClass(CsrfCustomExceptionMapper.class)
-                .addView("csrf/exception/form.jsp")
+        return Archives.getMvcArchive()
+                .addClass(ViewEngineAlgorithmController.class)
+                .addView("viewengine/algo/view.jsp")
                 .build();
     }
+
 
     @Before
     public void before() {
@@ -66,27 +64,31 @@ public class CsrfCustomMapperTest {
 
     @Test
     @SpecAssertions({
-            @SpecAssertion(section = Sections.SECURITY_CSRF, id = "csrf-exception"),
-            @SpecAssertion(section = Sections.SECURITY_CSRF, id = "csrf-custom-mapper")
+            @SpecAssertion(section = Sections.VIEW_ENGINE_ALGORITHM, id = "path-relative"),
     })
-    public void customExceptionMapper() throws IOException {
+    public void relativeViewPath() throws IOException {
 
-        // load page containing the form
-        HtmlPage formPage = webClient.getPage(baseUrl.toString() + "mvc/csrf/exception/form");
-        assertThat(formPage.getWebResponse().getStatusCode(), equalTo(200));
+        WebResponse response = webClient
+                .getPage(baseUrl.toString() + "mvc/viewengine/algorithm/relative-path")
+                .getWebResponse();
 
-        // fill name input
-        DomElement nameInputElement = formPage.getElementById("input");
-        assertNotNull("Name input element not found", nameInputElement);
-        nameInputElement.setAttribute("value", "Alice");
+        assertThat(response.getStatusCode(), equalTo(200));
+        assertThat(response.getContentAsString(), containsString("1 + 2 = 3"));
 
-        // submit form
-        DomElement submitButton = formPage.getElementById("submit");
-        assertNotNull("Submit button not found", submitButton);
-        Page resultPage = submitButton.click();
+    }
 
-        // check for custom response
-        assertThat(resultPage.getWebResponse().getStatusCode(), equalTo(499));
+    @Test
+    @SpecAssertions({
+            @SpecAssertion(section = Sections.VIEW_ENGINE_ALGORITHM, id = "path-absolute"),
+    })
+    public void absoluteViewPath() throws IOException {
+
+        WebResponse response = webClient
+                .getPage(baseUrl.toString() + "mvc/viewengine/algorithm/absolute-path")
+                .getWebResponse();
+
+        assertThat(response.getStatusCode(), equalTo(200));
+        assertThat(response.getContentAsString(), containsString("1 + 2 = 3"));
 
     }
 

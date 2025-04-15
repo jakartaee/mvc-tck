@@ -13,24 +13,13 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  */
-package ee.jakarta.tck.mvc.common;
+package ee.jakarta.tck.mvc.tests.security.csrf.base;
 
-import jakarta.mvc.security.Csrf;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 @ApplicationPath("mvc")
-public class DefaultApplication extends Application {
+public class CsrfBaseApplication extends Application {
 
     // defaults
-    @Override
-    public Map<String, Object> getProperties() {
-        Map<String, Object> properties = new LinkedHashMap<>();
-        properties.put(Csrf.CSRF_PROTECTION, Csrf.CsrfOptions.OFF);
-        return properties;
-    }
-
 }

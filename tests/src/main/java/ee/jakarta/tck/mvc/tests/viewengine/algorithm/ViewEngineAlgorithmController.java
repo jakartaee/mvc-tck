@@ -32,7 +32,7 @@ public class ViewEngineAlgorithmController {
     @GET
     @Path("overwrite-builtin")
     public String overwriteBuiltin() {
-        return "foobar.xhtml";
+        return "foobar.jsp";
     }
 
     @GET

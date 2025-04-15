@@ -58,7 +58,7 @@ public class CsrfDefaultHeaderTest {
 
     @Deployment(testable = false)
     public static WebArchive createDeployment() {
-        return Archives.getMvcArchive()
+        return Archives.getMvcArchive(CsrfDefaultHeaderApplication.class)
                 .addClass(CsrfHeaderController.class)
                 .addView("csrf/header/form.jsp")
                 .addView("csrf/header/success.jsp")
