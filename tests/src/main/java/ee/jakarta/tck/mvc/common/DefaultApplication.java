@@ -18,6 +18,10 @@ package ee.jakarta.tck.mvc.common;
 import jakarta.mvc.security.Csrf;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
+import jakarta.mvc.security.Csrf;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
