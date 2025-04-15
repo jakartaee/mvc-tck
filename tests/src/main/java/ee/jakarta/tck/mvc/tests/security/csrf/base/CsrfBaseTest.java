@@ -51,7 +51,7 @@ public class CsrfBaseTest {
 
     @Deployment(testable = false)
     public static WebArchive createDeployment() {
-        return Archives.getMvcArchive()
+        return Archives.getMvcArchive(CsrfBaseApplication.class)
                 .addClass(CsrfBaseController.class)
                 .addView("csrf/base/base.jsp")
                 .build();
