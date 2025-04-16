@@ -16,8 +16,18 @@
     SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
 
 ////
-== Appeals Process
+== TCK Challenge and resolution process for **Jakarta MVC**
 
-As stated by the link:https://jakarta.ee/committees/specification/tckprocess/[TCK process,window=_blank], _Specifications are the sole source of truth and considered overruling to the TCK in all senses_. Therefore, during the implementation of a specification it can happen, that the implementing party is considering a test of this TCK as non-conform to the specification. To get this problem resolved, the implementing party can create a _challenge_ for the test.
+This specification allows for lazy consensus as a resolution path for TCK test challenges as described in the Jakarta EE TCK Process Guide.
+For this specification, test challenges will be deemed accepted, 14 days from the date the test challenge issue is filed.
+Please file your challenge in conformance with "Filing a Challenge" requirements in the TCK Process Guide.
+If any specification team member determines that the challenge requires review it should be marked with the tag `challenge-review` and it will be resolved under the 'Active Resolution' process as described in the Jakarta EE TCK Process guide.
+Generally, once a conversation occurs with a member of the committer team, the filer should consider that the challenge will follow the Active Resolution process.
 
-To file a challenge, please create an issue in the link:https://github.com/eclipse-ee4j/mvc-tck/issues/[MVC TCK issue tracker,window=_blank} as described in the link:https://jakarta.ee/committees/specification/tckprocess#_filing_a_challenge[TCK process - Filing a challenge,window=_blank].
+In the event a challenge is approved under lazy consensus, any vendor implementation Compatibility Certification Request (CCR) that uses this challenge must include the issue ID along with the TCK details and test reporting statistics for this specification, regardless if the CCR is filed to this specification project issue tracker, or it is filed for any other specification project issue tracker. Failure to include this issue reference could result in CCR  approval delay.
+
+Once a TCK revision, that includes the resolution of this challenge is released, it is no longer necessary to include any additional reference in your CCR.
+
+This specification team tries to track issues as they are filed but feel free to reach out to us via mvc-dev@eclipse.org.
+If that fails, you may escalate your issue to the Jakarta EE Platform Committer list jakartaee-platform-dev@eclipse.org.
+If it is necessary to escalate further, you may request action following the Grievance process as described in the Eclipse Development Process, Handbook under Grievance Handling.
