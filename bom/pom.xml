@@ -24,7 +24,7 @@
     <parent>
         <groupId>jakarta.mvc.tck</groupId>
         <artifactId>mvc-tck-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </parent>
 
     <artifactId>mvc-tck-bom</artifactId>
@@ -74,7 +74,7 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <version>1.5.0.Final</version>
+                <version>1.9.4.Final</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
