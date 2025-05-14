@@ -90,23 +90,11 @@ public class BindingBaseTest {
     })
     public void submitValidationError() throws IOException {
 
-        Page page = submitForm("12");
+        HtmlPage resultPage = submitForm("12");
 
-        switch(page) {
-            case HtmlPage htmlPage:
-                assertThat(htmlPage.getWebResponse().getStatusCode(), equalTo(200));
-                assertThat(htmlPage.getElementById("message").getTextContent().trim(),
-                        CoreMatchers.startsWith("Validation error: You are too young"));
-                break;
-            case TextPage textPage:
-                assertThat(textPage.getWebResponse().getStatusCode(), equalTo(200));
-                assertThat(textPage.getContent().trim(),
-                        CoreMatchers.startsWith("Validation error: You are too young"));
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + page);
-        }
-
+        assertThat(resultPage.getWebResponse().getStatusCode(), equalTo(200));
+        assertThat(resultPage.getElementById("message").getTextContent().trim(),
+                CoreMatchers.startsWith("Validation error: You are too young"));
     }
 
     @Test
