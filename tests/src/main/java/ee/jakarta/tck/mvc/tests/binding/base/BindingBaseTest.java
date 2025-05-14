@@ -16,6 +16,8 @@
  */
 package ee.jakarta.tck.mvc.tests.binding.base;
 
+import com.gargoylesoftware.htmlunit.Page;
+import com.gargoylesoftware.htmlunit.TextPage;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -88,11 +90,22 @@ public class BindingBaseTest {
     })
     public void submitValidationError() throws IOException {
 
-        HtmlPage resultPage = submitForm("12");
+        Page page = submitForm("12");
 
-        assertThat(resultPage.getWebResponse().getStatusCode(), equalTo(200));
-        assertThat(resultPage.getElementById("message").getTextContent().trim(),
-                CoreMatchers.startsWith("Validation error: You are too young"));
+        switch(page) {
+            case HtmlPage htmlPage:
+                assertThat(htmlPage.getWebResponse().getStatusCode(), equalTo(200));
+                assertThat(htmlPage.getElementById("message").getTextContent().trim(),
+                        CoreMatchers.startsWith("Validation error: You are too young"));
+                break;
+            case TextPage textPage:
+                assertThat(textPage.getWebResponse().getStatusCode(), equalTo(200));
+                assertThat(textPage.getContent().trim(),
+                        CoreMatchers.startsWith("Validation error: You are too young"));
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + page);
+        }
 
     }
 
