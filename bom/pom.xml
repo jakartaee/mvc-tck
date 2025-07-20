@@ -28,6 +28,7 @@
     </parent>
 
     <artifactId>mvc-tck-bom</artifactId>
+    <packaging>pom</packaging>
     <name>Jakarta MVC TCK - BOM</name>
     <description>Technology Compatibility Kit for Jakarta MVC</description>
 
