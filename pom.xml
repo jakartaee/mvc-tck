@@ -2,7 +2,7 @@
 <!--
 
     Copyright © 2017, 2019 Christian Kaltepoth
-    Copyright (c) 2020, 2025 Contributors to the Eclipse Foundation
+    Copyright (c) 2020, 2026 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -23,7 +23,7 @@
 
     <groupId>jakarta.mvc.tck</groupId>
     <artifactId>mvc-tck-parent</artifactId>
-    <version>3.1.0-SNAPSHOT</version>
+    <version>3.0.1</version>
     <packaging>pom</packaging>
 
     <name>Jakarta MVC TCK - Parent</name>
@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
         <mvc-spec.version>3.0</mvc-spec.version>
-        <mvc-api.version>3.1.0-SNAPSHOT</mvc-api.version>
+        <mvc-api.version>3.0.1</mvc-api.version>
         <jakartaee.version>11.0.0</jakartaee.version>
     </properties>
 
