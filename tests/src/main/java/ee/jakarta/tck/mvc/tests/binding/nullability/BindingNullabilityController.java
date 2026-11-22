@@ -26,6 +26,7 @@ import jakarta.ws.rs.BeanParam;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * Inspects the values returned by {@link BindingResult} and exposes the outcome to the view.
@@ -47,15 +48,34 @@ public class BindingNullabilityController {
     @POST
     public String submit(@BeanParam @Valid BindingNullabilityForm form) {
 
-        models.put("allMessages", size(bindingResult.getAllMessages()));
-        models.put("allErrors", size(bindingResult.getAllErrors()));
-        models.put("ageErrors", size(bindingResult.getErrors("age")));
-        models.put("nameErrors", size(bindingResult.getErrors("name")));
-        models.put("unknownErrors", size(bindingResult.getErrors(UNKNOWN_PARAM)));
+        Set<ParamError> allErrors = bindingResult.getAllErrors();
+        Set<ParamError> ageErrors = bindingResult.getErrors("age");
+        Set<ParamError> nameErrors = bindingResult.getErrors("name");
+        Set<ParamError> unknownErrors = bindingResult.getErrors(UNKNOWN_PARAM);
 
+        models.put("allMessages", size(bindingResult.getAllMessages()));
+        models.put("allErrors", size(allErrors));
+        models.put("ageErrors", size(ageErrors));
+        models.put("nameErrors", size(nameErrors));
+        models.put("unknownErrors", size(unknownErrors));
+
+        // the non-null requirement applies to every error provided by BindingResult,
+        // so check the errors returned by each method, not only getAllErrors()
+        models.put("errorNullValues", countNullValues(allErrors) + countNullValues(ageErrors)
+                + countNullValues(nameErrors) + countNullValues(unknownErrors));
+
+        return "binding/nullability/result.jsp";
+
+    }
+
+    private static int size(Collection<?> collection) {
+        return collection == null ? -1 : collection.size();
+    }
+
+    private static int countNullValues(Collection<ParamError> errors) {
         int nullValues = 0;
-        if (bindingResult.getAllErrors() != null) {
-            for (ParamError error : bindingResult.getAllErrors()) {
+        if (errors != null) {
+            for (ParamError error : errors) {
                 if (error.getMessage() == null) {
                     nullValues++;
                 }
@@ -67,14 +87,7 @@ public class BindingNullabilityController {
                 }
             }
         }
-        models.put("errorNullValues", nullValues);
-
-        return "binding/nullability/result.jsp";
-
-    }
-
-    private static int size(Collection<?> collection) {
-        return collection == null ? -1 : collection.size();
+        return nullValues;
     }
 
 }
