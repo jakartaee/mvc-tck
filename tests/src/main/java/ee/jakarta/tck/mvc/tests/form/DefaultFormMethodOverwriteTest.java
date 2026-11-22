@@ -41,7 +41,7 @@ import java.net.URL;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Arquillian.class)
-@SpecVersion(spec = "mvc", version = "2.1")
+@SpecVersion(spec = "mvc", version = "3.1")
 public class DefaultFormMethodOverwriteTest extends AbstractFormMethodOverwriteTest {
 
     @ArquillianResource

@@ -35,7 +35,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 @RunWith(Arquillian.class)
-@SpecVersion(spec = "mvc", version = "1.0")
+@SpecVersion(spec = "mvc", version = "3.1")
 public class CsrfVerifyExplicitConfigTest extends AbstractCsrfVerifyTest {
 
     @Deployment(testable = false)

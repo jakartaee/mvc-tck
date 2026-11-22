@@ -23,14 +23,14 @@
 
     <groupId>jakarta.mvc.tck</groupId>
     <artifactId>mvc-tck-sample</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0-SNAPSHOT</version>
 
     <name>Jakarta MVC TCK - Sample Runner</name>
     <description>Technology Compatibility Kit for Jakarta MVC</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.version>17</maven.compiler.version>
+        <maven.compiler.release>21</maven.compiler.release>
     </properties>
 
     <build>
@@ -101,9 +101,6 @@
     <profiles>
         <profile>
             <id>staging</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <repositories>
                 <repository>
                     <id>sonatype-nexus-staging</id>

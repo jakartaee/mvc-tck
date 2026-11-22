@@ -39,7 +39,7 @@ import static org.junit.Assert.assertThat;
 import static ee.jakarta.tck.mvc.util.MvcMatchers.isRedirectStatus;
 
 @RunWith(Arquillian.class)
-@SpecVersion(spec = "mvc", version = "1.0")
+@SpecVersion(spec = "mvc", version = "3.1")
 public class SendRedirectTest {
 
     @ArquillianResource
