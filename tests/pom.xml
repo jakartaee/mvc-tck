@@ -159,8 +159,7 @@
                             <compilerArguments>
                                 -AauditXml=${project.build.directory}/tck-audit/tck-audit.xml
                                 -AoutputDir=${project.build.directory}/coverage-report/
-                                -source ${maven.compiler.source}
-                                -target ${maven.compiler.target}
+                                --release ${maven.compiler.release}
                             </compilerArguments>
                         </configuration>
                         <dependencies>

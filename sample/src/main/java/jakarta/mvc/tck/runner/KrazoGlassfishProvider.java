@@ -42,9 +42,9 @@ public class KrazoGlassfishProvider implements BaseArchiveProvider {
 //                        .withRemoteRepo(stagingRepo)
                         .withMavenCentralRepo(false)
                         .resolve(
-                                "jakarta.mvc:jakarta.mvc-api:3.0.0",
-                                "org.eclipse.krazo:krazo-core:4.0.0-SNAPSHOT",
-                                "org.eclipse.krazo:krazo-jersey:4.0.0-SNAPSHOT")
+                                "jakarta.mvc:jakarta.mvc-api:3.1.0-SNAPSHOT",
+                                "org.eclipse.krazo:krazo-core:4.1.0-SNAPSHOT",
+                                "org.eclipse.krazo:krazo-jersey:4.1.0-SNAPSHOT")
                         .withoutTransitivity()
                         .asFile();
 

@@ -1,7 +1,7 @@
 ////
 
     Copyright © 2019 Christian Kaltepoth
-    Copyright (c) 2020, 2025 Contributors to the Eclipse Foundation
+    Copyright (c) 2020, 2026 Contributors to the Eclipse Foundation
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -50,10 +50,10 @@ The strategy of the Jakarta MVC {mvc-spec-version} TCK is to write a test which 
 A test case (a method annotated with `@Test`) is correlated with an assertion using the
 `@org.jboss.test.audit.annotations.SpecAssertion` annotation as follows:
 
-[source,java]
+[source,java,subs="attributes+"]
 ----
 @RunWith(Arquillian.class)
-@SpecVersion(spec = "mvc", version = "1.0")
+@SpecVersion(spec = "mvc", version = "{mvc-spec-version}")
 public class ControllerAnnotationTest {
 
     /* more tests */
@@ -68,6 +68,9 @@ public class ControllerAnnotationTest {
 
 }
 ----
+
+The `version` of `@SpecVersion` must match the specification version in the assertion document ({mvc-spec-version}).
+The coverage report ignores test classes with any other version and lists them as unversioned.
 
 To help evaluate the distribution of coverage for these assertions, the TCK provides a detailed coverage report.
 This report is also useful to help implementors match tests with the language in the specification that supports the behavior being tested.
