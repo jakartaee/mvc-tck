@@ -22,10 +22,10 @@ package ee.jakarta.tck.mvc.tests.form;
 import java.io.IOException;
 import java.net.URL;
 
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlForm;
-import com.gargoylesoftware.htmlunit.html.HtmlHiddenInput;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import org.htmlunit.WebClient;
+import org.htmlunit.html.HtmlForm;
+import org.htmlunit.html.HtmlHiddenInput;
+import org.htmlunit.html.HtmlPage;
 
 public abstract class AbstractFormMethodOverwriteTest {
     protected final HtmlPage getDefaultFormPage(final WebClient webClient, final URL baseUrl) throws java.io.IOException {

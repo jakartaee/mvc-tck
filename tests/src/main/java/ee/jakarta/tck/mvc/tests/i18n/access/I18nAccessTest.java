@@ -16,8 +16,8 @@
  */
 package ee.jakarta.tck.mvc.tests.i18n.access;
 
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.WebResponse;
+import org.htmlunit.WebClient;
+import org.htmlunit.WebResponse;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;

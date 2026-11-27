@@ -38,7 +38,7 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.3</version>
+                    <version>3.6.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -52,6 +52,38 @@
                 <groupId>jakarta.platform</groupId>
                 <artifactId>jakarta.jakartaee-web-api</artifactId>
                 <version>${jakartaee.version}</version>
+            </dependency>
+
+            <!-- Jakarta EE 12 component APIs (CDI 5 moved to the jakarta.cdi groupId; the old coordinates relocate there) -->
+            <dependency>
+                <groupId>jakarta.enterprise</groupId>
+                <artifactId>jakarta.enterprise.cdi-api</artifactId>
+                <version>${cdi-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.enterprise</groupId>
+                <artifactId>jakarta.enterprise.lang-model</artifactId>
+                <version>${cdi-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.enterprise</groupId>
+                <artifactId>jakarta.enterprise.cdi-el-api</artifactId>
+                <version>${cdi-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.cdi</groupId>
+                <artifactId>jakarta.cdi-api</artifactId>
+                <version>${cdi-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.ws.rs</groupId>
+                <artifactId>jakarta.ws.rs-api</artifactId>
+                <version>${rest-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${validation-api.version}</version>
             </dependency>
 
             <dependency>
@@ -75,7 +107,7 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <version>1.5.0.Final</version>
+                <version>1.10.2.Final</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -83,7 +115,7 @@
             <dependency>
                 <groupId>org.jboss.shrinkwrap.resolver</groupId>
                 <artifactId>shrinkwrap-resolver-bom</artifactId>
-                <version>3.0.0</version>
+                <version>3.3.7</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -97,15 +129,15 @@
             </dependency>
 
             <dependency>
-                <groupId>net.sourceforge.htmlunit</groupId>
+                <groupId>org.htmlunit</groupId>
                 <artifactId>htmlunit</artifactId>
-                <version>2.70.0</version>
+                <version>5.9.0</version>
             </dependency>
 
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.13.1</version>
+                <version>4.13.2</version>
             </dependency>
 
         </dependencies>

@@ -16,9 +16,9 @@
  */
 package ee.jakarta.tck.mvc.tests.security.csrf.base;
 
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.DomElement;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import org.htmlunit.WebClient;
+import org.htmlunit.html.DomElement;
+import org.htmlunit.html.HtmlPage;
 import jakarta.mvc.security.Csrf;
 import org.hamcrest.CoreMatchers;
 import org.jboss.arquillian.container.test.api.Deployment;
