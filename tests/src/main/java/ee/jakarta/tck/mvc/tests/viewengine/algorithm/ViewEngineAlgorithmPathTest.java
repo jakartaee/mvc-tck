@@ -15,8 +15,8 @@
  */
 package ee.jakarta.tck.mvc.tests.viewengine.algorithm;
 
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.WebResponse;
+import org.htmlunit.WebClient;
+import org.htmlunit.WebResponse;
 import ee.jakarta.tck.mvc.Sections;
 import ee.jakarta.tck.mvc.util.Archives;
 import org.jboss.arquillian.container.test.api.Deployment;

@@ -37,12 +37,12 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.3</version>
+                <version>3.6.1</version>
                 <configuration>
                     <dependenciesToScan>jakarta.mvc.tck:mvc-tck-tests</dependenciesToScan>
                     <systemProperties>
                         <ee.jakarta.tck.mvc.api.BaseArchiveProvider>
-                            ee.jakarta.tck.mvc.runner.KrazoGlassfishProvider
+                            jakarta.mvc.tck.runner.KrazoGlassfishProvider
                         </ee.jakarta.tck.mvc.api.BaseArchiveProvider>
                     </systemProperties>
                 </configuration>
@@ -71,9 +71,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.arquillian.container</groupId>
-            <artifactId>arquillian-glassfish-remote-3.1</artifactId>
-            <version>1.0.2</version>
+            <groupId>org.omnifaces.arquillian</groupId>
+            <artifactId>arquillian-glassfish-server-remote</artifactId>
+            <version>1.8</version>
             <scope>test</scope>
         </dependency>
 

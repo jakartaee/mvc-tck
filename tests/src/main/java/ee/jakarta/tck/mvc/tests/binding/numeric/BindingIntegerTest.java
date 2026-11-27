@@ -16,7 +16,7 @@
  */
 package ee.jakarta.tck.mvc.tests.binding.numeric;
 
-import com.gargoylesoftware.htmlunit.Page;
+import org.htmlunit.Page;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
